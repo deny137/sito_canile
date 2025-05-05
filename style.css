@@ -1,4 +1,4 @@
-.body{
+body{
     background-color: #ffe8f7;
     font-family: sans-serif;
 }
@@ -61,4 +61,64 @@
     opacity: 0.5;
     text-decoration: none;
     transition: opacity 0.3s;
+  }
+
+  .dogs {
+    display: flex; 
+    justify-content: flex start; /* allinea gli elementi da sinistra a destra */
+    gap: 10px;  /* aggiunge spazio tra una immagine e l'altra */
+    flex-wrap: wrap; /* se nn cè spazio a sufficienza le immagini vanno a capo */
+    margin-top: 30px;
+  }
+
+  .dog {
+    text-align: center;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    width: 200px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .dog img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  .dog-info {
+    padding: 10px;
+    background-color: #fff0f7;
+    font-size: 14px;
+  }
+
+  .cats {
+    display: flex; 
+    justify-content: flex start; 
+    gap: 10px;  
+    flex-wrap: wrap; 
+    margin-top: 30px;
+  }
+
+  .cat {
+    text-align: center;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    width: 200px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .cat img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    object-fit: cover;
+  }
+
+  .cat-info {
+    padding: 10px;
+    background-color: #fff0f7;
+    font-size: 14px;
   }
