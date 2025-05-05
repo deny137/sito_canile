@@ -10,7 +10,13 @@ body {
 .medium-text{font-size: 30px;}
 .normal-text{font-size: 17px;}
 
+.title-adozioni, .title-volontariato {
+  font-family: 'Playfair Display, serif';
+}
 
+.text {
+  font-family: 'Georgia', serif;
+}
 
 .header {
     top: 0;
