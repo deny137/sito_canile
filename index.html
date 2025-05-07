@@ -21,6 +21,10 @@
             <li></li>
         </ul>
         </div>
+
+        <div class="mobile-menu-icon" onclick="toggleMenu()">
+            ☰
+          </div>
     </header>
 
     <main class="main">
@@ -102,7 +106,9 @@
         </p>
     </main>
     
-    <div class="side-menu">
+    <div class="side-menu" id="sideMenu">
+        <div class="close-button" onclick="toggleMenu()">✖</div>
+    
         <div class="box">
             <h3>Annunci</h3>
             <ul>
@@ -140,6 +146,14 @@
         </div>
 
     </div>
+
+    <script>
+        function toggleMenu() {
+          const menu = document.querySelector('.side-menu');
+          menu.classList.toggle('visible');
+        }
+        </script>
+        
 
     <footer>
         <p>numero di telefono: +39 347 803 8756</p>
