@@ -1,19 +1,12 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-body {
-=======
 body{
-=======
 
->>>>>>> ad7e3a0 (slider interattivo)
 
 .big-text{font-size: 70px;}
 .medium-text{font-size: 30px;}
 .normal-text{font-size: 17px;}
-
+}
 
 .body{
->>>>>>> be22772 (.)
     background-color: #ffe8f7;
     font-family: sans-serif;
 }
@@ -93,15 +86,9 @@ body{
     scroll-snap-type: x mandatory;
     gap: 10px;
     padding: 10px;
-<<<<<<< HEAD
     scroll-behavior: auto;
     height: 500px;
     position: relative;
-=======
-    scroll-behavior: smooth;
-    height: 700px;
-    transition: transform 0.3s ease-in-out;
->>>>>>> ad7e3a0 (slider interattivo)
   }
   
  
@@ -126,13 +113,8 @@ body{
     display: flex;
     position:absolute;
     left: 50%;
-<<<<<<< HEAD
     bottom: 20px;
     transform: translateX(-50%); /* Centra gli indicatori orizzontalmente */
-=======
-    top: 900px;
-    transform: translateX(-50%); 
->>>>>>> ad7e3a0 (slider interattivo)
   }
 
 
