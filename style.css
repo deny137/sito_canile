@@ -47,7 +47,7 @@ body{
     margin-right: 240px;
 }
 
-.side-menu {
+.side-menu{
   position: fixed;
   top: 0;         
   right: 0;       
@@ -193,4 +193,40 @@ body{
     padding: 10px;
     background-color: #fff0f7;
     font-size: 14px;
+  }
+
+  .box {
+    background-color: #fff0f7; /* rosa chiaro */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .box-eventi {
+    background-color: #fff0f7; 
+    padding: 20px;
+    border-radius: 10px;
+    margin: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 10px;
+  }
+
+  .box-donazioni {
+    background-color: #fff0f7; 
+    padding: 20px;
+    border-radius: 10px;
+    margin: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 10px;
+  }
+
+  .box-newinfo {
+    background-color: #fff0f7; 
+    padding: 20px;
+    border-radius: 10px;
+    margin: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 10px;
+    margin-bottom: 30px;
   }
