@@ -48,45 +48,43 @@
         const options = {
             root: document.querySelector('.slider'),
             rootMargin: '0px',
-            threshold: 0.5 // almeno metà dello slide visibile
+            threshold: 0.5 
         };
 
         const navLinks = document.querySelectorAll('.slider-nav a');
         const slides = document.querySelectorAll('.slider img');
 
-        // Observer to track the visibility of each image and update active dots
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                const id = entry.target.id; // Ottieni l'ID dell'immagine visibile
+                const id = entry.target.id; 
 
-                // Verifica se l'immagine è visibile
                 if (entry.isIntersecting) {
-                    // Aggiungi la classe 'active' alla nav e all'immagine corrispondente
+                    
                     navLinks.forEach(link => {
                         if (link.dataset.slide === id) {
-                            link.classList.add('active'); // Aggiungi la classe 'active' al puntino
+                            link.classList.add('active'); 
                         } else {
-                            link.classList.remove('active'); // Rimuovi la classe 'active' dagli altri puntini
+                            link.classList.remove('active'); 
                         }
                     });
 
                     slides.forEach(slide => {
                         if (slide.id === id) {
-                            slide.classList.add('active'); // Aggiungi la classe 'active' all'immagine
+                            slide.classList.add('active'); 
                         } else {
-                            slide.classList.remove('active'); // Rimuovi la classe 'active' dalle altre immagini
+                            slide.classList.remove('active'); 
                         }
                     });
                 }
             });
         }, options);
 
-        // Osserva ogni immagine nello slider
+        
         slides.forEach(slide => {
             observer.observe(slide);
         });
 
-        // Assicurati che il primo puntino sia attivo all'inizio
+        
         document.addEventListener('DOMContentLoaded', () => {
             navLinks[0].classList.add('active');
         });
