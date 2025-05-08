@@ -43,6 +43,7 @@
 
     <div class="side-menu" id="sideMenu">
         <div class="close-button" onclick="toggleMenu()">✖</div>
+        <div class="toggle-arrow close" onclick="chiudiSideMenu()">❯</div>
     
         <div class="box">
             <h3>Annunci</h3>
@@ -82,6 +83,7 @@
 
     </div>
 
+    <div class="toggle-arrow open hidden" id="openArrow" onclick="apriSideMenu()">❮</div>
     
     <main class="main">
 
@@ -104,10 +106,74 @@
         }
         </script>
 
+    <script>
+        function chiudiSideMenu() {
+        const menu = document.getElementById('sideMenu');
+        const openArrow = document.getElementById('openArrow');
+        const main = document.querySelector('.main');
+
+        menu.classList.add('hidden');
+        openArrow.classList.remove('hidden');
+        main.classList.add('wide');
+        }
+
+        function apriSideMenu() {
+        const menu = document.getElementById('sideMenu');
+        const openArrow = document.getElementById('openArrow');
+        const main = document.querySelector('.main');
+
+        menu.classList.remove('hidden');
+        openArrow.classList.add('hidden');
+        main.classList.remove('wide');
+        }
+    </script>
+          
+
     
- <footer>
-        <p>numero di telefono: +39 347 803 8756 📞</p>
-    </footer>  
+    <footer>
+        <div class="info-footer-3col">
+    
+            <div class="colonna-contatti">
+                <h3><strong>CONTATTI INFORMAZIONE</strong></h3>
+                <ul>
+                <li><strong>Email:</strong> info@cuccioliallegri.it</li>
+                <li><strong>Telefono segreteria:</strong> +39 388 123 4567</li>
+                <li><strong>Telefono adozioni:</strong> +39 347 803 8756</li>
+                </ul>
+            </div>
+            
+            <div class="colonna-orari">
+                <h3><strong>ORARI DI APERTURA</strong></h3>               
+                <ul>
+                    <li><strong>Lunedì:</strong> 9:00 - 17:00</li>
+                    <li><strong>Martedì:</strong> 9:00 - 17:00</li>
+                    <li><strong>Mercoledì:</strong> 9:00 - 17:00</li>
+                    <li><strong>Giovedì:</strong> 9:00 - 17:00</li>
+                </ul>
+            </div>
+                  
+            <div class="colonna-orari2">
+                <h3>&nbsp;</h3> 
+                 <ul>
+                    <li><strong>Venerdì:</strong> 9:00 - 17:00</li>
+                    <li><strong>Sabato:</strong> 10:00 - 14:00</li>
+                    <li><strong>Domenica:</strong> Chiuso</li>
+                </ul>   
+            </div>    
+    
+            <div class="colonna colonna-orari-mobile">
+                <h3><strong>Orari di apertura</strong></h3>
+                <ul>
+                    <li><strong>Lunedì:</strong> 9:00 - 17:00</li>
+                    <li><strong>Martedì:</strong> 9:00 - 17:00</li>
+                    <li><strong>Mercoledì:</strong> 9:00 - 17:00</li>
+                    <li><strong>Giovedì:</strong> 9:00 - 17:00</li>
+                    <li><strong>Venerdì:</strong> 9:00 - 17:00</li>
+                    <li><strong>Sabato:</strong> 10:00 - 14:00</li>
+                    <li><strong>Domenica:</strong> Chiuso</li>
+                </ul>
+                </div>
+    </footer>      
 
 </body>
 

@@ -48,72 +48,69 @@
     <h1 class="big-text">CUCCIOLI ALLEGRI</h1>
 
     <div class="slider">
-            <img src="foto/slider1.jpg" alt="slide 1"  class="slider-image active" id="slide1">
-            <img src="foto/slider2.jpg" alt="slide 2"  class="slider-image" id="slide2">
-            <img src="foto/slider3.jpg" alt="slide 3"  class="slider-image" id="slide3">
-            <img src="foto/slider4.jpg" alt="slide 4"  class="slider-image" id="slide4">
+            <img src="foto/slider1.jpg" alt="slide 1" id="slide1">
+            <img src="foto/slider2.jpg" alt="slide 2" id="slide2">
+            <img src="foto/slider3.jpg" alt="slide 3" id="slide3">
+            <img src="foto/slider4.jpg" alt="slide 4" id="slide4">
 
-            <div class="slider-nav">
-                <button id="prev" onclick="moveSlide(-1)">&#10094;</button>
-                <button id="next" onclick="moveSlide(1)">&#10095;</button>
-            </div>
+        <div class="slider-nav">
+            <a href="#slide1" data-slide="slide1"></a>
+            <a href="#slide2" data-slide="slide2"></a>
+            <a href="#slide3" data-slide="slide3"></a>
+            <a href="#slide4" data-slide="slide4"></a>
 
         </div>
 
       </div>
 
-      
-    <script>
-       let currentSlide = 0;
-       const slides = document.querySelectorAll('.slider-image'); 
-       let interval;
+      <script>
+        const options = {
+            root: document.querySelector('.slider'),
+            rootMargin: '0px',
+            threshold: 0.5 
+        };
 
-        function showSlide(index) {
-            const totalSlides = slides.length;
+        const navLinks = document.querySelectorAll('.slider-nav a');
+        const slides = document.querySelectorAll('.slider img');
 
-            if (index >= totalSlides) {
-                currentSlide = 0;
-            } else if (index < 0) {
-                currentSlide = totalSlides - 1;
-            } else {
-                currentSlide = index;
-            }
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.id; 
 
-            slides.forEach((slide, i) => {
-                
-                slide.style.opacity = '0';
-                slide.classList.remove('active');
+                if (entry.isIntersecting) {
+                    
+                    navLinks.forEach(link => {
+                        if (link.dataset.slide === id) {
+                            link.classList.add('active'); 
+                        } else {
+                            link.classList.remove('active'); 
+                        }
+                    });
+
+                    slides.forEach(slide => {
+                        if (slide.id === id) {
+                            slide.classList.add('active'); 
+                        } else {
+                            slide.classList.remove('active'); 
+                        }
+                    });
+                }
             });
+        }, options);
 
-            
-            slides[currentSlide].style.opacity = '1';
-            slides[currentSlide].classList.add('active');
-        }
+        
+        slides.forEach(slide => {
+            observer.observe(slide);
+        });
 
-        function moveSlide(direction) {
-            showSlide(currentSlide + direction);
-            resetInterval(); 
-        }
-
-        function startInterval() {
-            interval = setInterval(() => {
-                moveSlideWithoutReset(1); // evita il reset infinito
-            }, 3000);
-        }
-
-        function resetInterval() {
-            clearInterval(interval);
-            startInterval();
-        }
-
-        function moveSlideWithoutReset(direction) {
-            showSlide(currentSlide + direction);
-        }
-
-        showSlide(currentSlide);
-        startInterval();
-
-    </script>
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            navLinks[0].classList.add('active');
+        });
+    </script>  
+</body>
+      
+      
 
     <h2 class="titoletti">Chi siamo?</h2>
     <p class="text">Siamo un gruppo di persone con una grande passione: gli animali. Il nostro canile nasce dal desiderio di offrire una seconda possibilità a cani e gattini che, per diversi motivi, hanno perso la loro casa.</p>
@@ -133,16 +130,17 @@
     
     <div class="side-menu" id="sideMenu">
         <div class="close-button" onclick="toggleMenu()">✖</div>
+        <div class="toggle-arrow close" onclick="chiudiSideMenu()">❯</div>
     
         <div class="box">
             <h3>Annunci</h3>
             <ul>
-                <li><a href="adozioni.html">🐶 Nuovi cuccioli disponibili!</a></li>
-                <li><a href="volontariato.html">📅 Evento adozione: 15 maggio</a></li>
-                <li><a href="volontariato.html">🤝 Cerchiamo volontari</a></li>
+                <li>🐶 Nuovi cuccioli disponibili!</li>
+                <li>📅 Evento adozione: 15 maggio</li>
+                <li>🤝 Cerchiamo volontari</li>
             </ul>
         </div>
-
+    
         <div class="box-eventi">
             <h3>Eventi 2025</h3>
             <ul>
@@ -151,17 +149,16 @@
                 <li>14-11-2025 📅</li>
             </ul>
         </div>
-
+    
         <div class="box-donazioni">
             <h3>Donazioni</h3>
             <ul>
                 <li>Un piccolo gesto può cambiare una vita: dona amore a chi non ha ancora una casa. 🐾</li>
-                <li></li>
                 <li><h4>Puoi farlo al numero:</h4></li>
                 <li>+39 356 355 1298 📞</li>
             </ul>
         </div>
-
+    
         <div class="box-newinfo">
             <h3>Per new info</h3>
             <ul>
@@ -169,9 +166,9 @@
                 <li>+39 345 123 2765</li>
             </ul>
         </div>
-
     </div>
-
+    
+    <div class="toggle-arrow open hidden" id="openArrow" onclick="apriSideMenu()">❮</div>
 
     <script>
         function toggleMenuleft() {
@@ -187,10 +184,81 @@
         }
         </script>
 
-    <footer>
-        <p>numero di telefono: +39 347 803 8756</p>
-    </footer>    
+    <script>
+        function chiudiSideMenu() {
+        const menu = document.getElementById('sideMenu');
+        const openArrow = document.getElementById('openArrow');
+        const main = document.querySelector('.main');
+        const footer = document.querySelector('footer');
+    
+        menu.classList.add('hidden');
+        openArrow.classList.remove('hidden');
+        main.classList.add('wide');
+        footer.classList.add('wide'); // Aggiunto!
+        }
+    
+        function apriSideMenu() {
+        const menu = document.getElementById('sideMenu');
+        const openArrow = document.getElementById('openArrow');
+        const main = document.querySelector('.main');
+        const footer = document.querySelector('footer');
+    
+        menu.classList.remove('hidden');
+        openArrow.classList.add('hidden');
+        main.classList.remove('wide');
+        footer.classList.remove('wide'); // Aggiunto!
+        }
+    </script>
+    
 
+    <footer>
+        <div class="info-footer-3col">
+
+            <div class="colonna-contatti">
+              <h3><strong>CONTATTI INFORMAZIONE</strong></h3>
+              <ul>
+                <li><strong>Email:</strong> info@cuccioliallegri.it</li>
+                <li><strong>Telefono segreteria:</strong> +39 388 123 4567</li>
+                <li><strong>Telefono adozioni:</strong> +39 347 803 8756</li>
+              </ul>
+            </div>
+        
+            <div class="colonna-orari">
+                <h3><strong>ORARI DI APERTURA</strong></h3>
+               
+                <ul>
+                  <li><strong>Lunedì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Martedì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Mercoledì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Giovedì:</strong> 9:00 - 17:00</li>
+                </ul>
+              </div>
+              
+              <div class="colonna-orari2">
+                <h3>&nbsp;</h3> 
+                <ul>
+                  <li><strong>Venerdì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Sabato:</strong> 10:00 - 14:00</li>
+                  <li><strong>Domenica:</strong> Chiuso</li>
+                </ul>
+              </div>
+
+              <div class="colonna colonna-orari-mobile">
+                <h3><strong>Orari di apertura</strong></h3>
+                <ul>
+                  <li><strong>Lunedì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Martedì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Mercoledì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Giovedì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Venerdì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Sabato:</strong> 10:00 - 14:00</li>
+                  <li><strong>Domenica:</strong> Chiuso</li>
+                </ul>
+              </div>
+    </footer>
+              
 </body>
+
+
 
 </html>

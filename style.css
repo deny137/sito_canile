@@ -135,6 +135,77 @@ body{
   font-size: 14px;
 }
 
+.toggle-arrow {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  cursor: pointer;
+  background-color: white;
+  padding: 5px 10px;
+  border-radius: 0 5px 5px 0;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  z-index: 2000;
+}
+
+.toggle-arrow.close {
+  right: 200px; 
+}
+
+.toggle-arrow.open {
+  right: 0;
+  border-radius: 5px 0 0 5px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.main {
+  padding-top: 60px;
+  margin-right: 240px; 
+  transition: margin-right 0.3s ease;
+}
+
+.main.wide {
+  margin-right: 0; 
+}
+
+@media (max-width: 768px) {
+  
+  .toggle-arrow {
+    display: none !important;
+  }
+
+  .side-menu {
+    display: none;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background-color: white;
+    width: 200px;
+    padding: 20px;
+    box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+    z-index: 1000;
+  }
+
+  .side-menu.visible {
+    display: block;
+  }
+
+  .main {
+    margin-right: 0;
+  }
+
+  .toggle-arrow {
+    display: none !important;
+  }
+
+  .main.wide {
+    margin-right: 0 !important;
+  }
+}
+
 .slider {
     display: flex;
     overflow: hidden;
@@ -321,7 +392,7 @@ body{
       top: 0;
       height: 100%;
       background-color: white;
-      width: 70%;
+      width: 200px;
       padding: 20px;
       box-shadow: -2px 0 8px rgba(0,0,0,0.2);
     }
@@ -335,7 +406,7 @@ body{
     }
   
     .main {
-      margin-right: 0; /* to avoid extra space when side-menu is hidden */
+      margin-right: 0; 
     }
   }
 
@@ -360,4 +431,59 @@ body{
   margin: 3px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   margin-top: 10px;
+}
+
+.info-footer-3col {
+  display: flex;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.colonna-orari, .colonna-contatti, .colonna-orari2 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.colonna-contatti, .colonna-orari, .colonna-orari2 {
+  flex: 1;
+  min-width: 200px;
+}
+
+footer {
+  margin-right: 240px; 
+  transition: margin-right 0.3s ease;
+}
+
+footer.wide {
+  margin-right: 0;
+}
+
+.colonna-orari-mobile {
+  display: none;
+}
+
+/* Responsive (mobile) */
+@media (max-width: 768px) {
+  .footer-colonne {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .colonna-orari,
+  .colonna-orari2 {
+    display: none;
+  }
+
+  .colonna-orari-mobile {
+    display: block;
+  }
+
+  .colonna {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
