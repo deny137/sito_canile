@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Cuccioli Allegri - Home page</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+
+
+<body class="body">
+    <header class="header">
+        <div class="logo">
+            <img src="foto/logo.png" alt="">
+        </div>
+        <div class="menu"><ul>
+                <li> <a href="index.html">Home</a></li>
+                <li><a href="volontariato.html">Volontariato</a></li>
+                <li><a href="adozioni.html">Adotta un cucciolo</a></li>
+                <li></li>
+        </ul>
+        </div>
+
+        <div class="mobile-menu-icon" onclick="toggleMenu()">
+            ☰
+          </div>
+
+        <div class="pulsante" onclick="toggleMenuleft()">
+            ☰
+        </div>
+    
+    <div class="menuleft" id="menuleft">
+        <div class="chiudimenu" onclick="toggleMenuleft()">✖</div>
+        <div class="box-menuprincipale">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="volontariato.html">Volontariato</a></li>
+                <li><a href="adozioni.html">Adotta un cucciolo</a></li>
+            </ul>
+        </div>
+    </div>
+    </header>
+
+    <main class="main">
+
+    
+    <h1 class="big-text">CUCCIOLI ALLEGRI</h1>
+
+    <div class="slider">
+            <img src="foto/slider1.jpg" alt="slide 1" id="slide1">
+            <img src="foto/slider2.jpg" alt="slide 2" id="slide2">
+            <img src="foto/slider3.jpg" alt="slide 3" id="slide3">
+            <img src="foto/slider4.jpg" alt="slide 4" id="slide4">
+
+        <div class="slider-nav">
+            <a href="#slide1" data-slide="slide1"></a>
+            <a href="#slide2" data-slide="slide2"></a>
+            <a href="#slide3" data-slide="slide3"></a>
+            <a href="#slide4" data-slide="slide4"></a>
+
+        </div>
+
+      </div>
+
+      <script>
+        const options = {
+            root: document.querySelector('.slider'),
+            rootMargin: '0px',
+            threshold: 0.5 
+        };
+
+        const navLinks = document.querySelectorAll('.slider-nav a');
+        const slides = document.querySelectorAll('.slider img');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.id; 
+
+                if (entry.isIntersecting) {
+                    
+                    navLinks.forEach(link => {
+                        if (link.dataset.slide === id) {
+                            link.classList.add('active'); 
+                        } else {
+                            link.classList.remove('active'); 
+                        }
+                    });
+
+                    slides.forEach(slide => {
+                        if (slide.id === id) {
+                            slide.classList.add('active'); 
+                        } else {
+                            slide.classList.remove('active'); 
+                        }
+                    });
+                }
+            });
+        }, options);
+
+        
+        slides.forEach(slide => {
+            observer.observe(slide);
+        });
+
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            navLinks[0].classList.add('active');
+        });
+    </script>  
+</body>
+      
+      
+
+    <h2 class="titoletti">Chi siamo?</h2>
+    <p class="text">Siamo un gruppo di persone con una grande passione: gli animali. Il nostro canile nasce dal desiderio di offrire una seconda possibilità a cani e gattini che, per diversi motivi, hanno perso la loro casa.</p>
+    <p class="text">Ogni giorno ci prendiamo cura di loro con amore, pazienza e rispetto, perché per noi non sono solo ospiti... sono parte della nostra famiglia. Accogliamo, curiamo, coccoliamo e, soprattutto, cerchiamo per ognuno di loro una nuova casa dove poter ricominciare.</p>
+    <p class="text">Crediamo che ogni cane meriti una vita piena di affetto e dignità, e facciamo del nostro meglio per regalargliela.
+    <p class="text">Se anche tu ami gli animali come noi, vieni a conoscerci: potresti trovare un nuovo amico che ti sta già aspettando con la coda che scodinzola!</p>
+
+    <h2 class="titoletti">La nostra storia</h2>
+    <p class="text">Tutto È cominciato con un piccolo sogno e un grande amore per gli animali.</p>
+    <p class="text">Anni fa, in un angolo tranquillo della nostra città, alcune persone con il cuore grande hanno deciso di unire le forze per creare un rifugio sicuro per cani e gatti in difficoltà.così è nato <em>Cuccioli Allegri</em>.</p>
+    <p class="text">Inizialmente avevamo solo qualche cuccia, una staccionata e tanta buona volontà. Col tempo, grazie al sostegno di volontari, donatori e famiglia adottive, il nostro rifugio è cresciuto, diventando una vera casa centinaia di animali.</p>
+    <p class="text">Ogni cucciolo che accogliamo a una storia diversa: c'è chi è stato abbandonato, chi è nato per strada, che ha conosciuto la paura e la solitudine. Ma qui da noi trovano calore, cura e la possibilità di una nuova nuova vita.</p>
+    <p class="text">Il nostro impegno non si limita all'accoglienza: promuoviamo l'adozione responsabile, organizziamo eventi sul territorio e collaboriamo con scuole associazioni per diffondere il rispetto e l'amore verso gli animali.</p>
+    <p class="text"><em>Cuccioli Allegri</em> è più di un canile/gattile. È una famiglia allargata catalizzante, code scodinzolanti e cuori generosi. E siamo felici di condividerla con tutti voi.</p>
+
+    </main>
+    
+    <div class="side-menu" id="sideMenu">
+        <div class="close-button" onclick="toggleMenu()">✖</div>
+        <div class="toggle-arrow close" onclick="chiudiSideMenu()">❯</div>
+    
+        <div class="box">
+            <h3>Annunci</h3>
+            <ul>
+                <li>🐶 Nuovi cuccioli disponibili!</li>
+                <li>📅 Evento adozione: 15 maggio</li>
+                <li>🤝 Cerchiamo volontari</li>
+            </ul>
+        </div>
+    
+        <div class="box-eventi">
+            <h3>Eventi 2025</h3>
+            <ul>
+                <li>07-07-2025 📅</li>
+                <li>21-09-2025 📅</li>
+                <li>14-11-2025 📅</li>
+            </ul>
+        </div>
+    
+        <div class="box-donazioni">
+            <h3>Donazioni</h3>
+            <ul>
+                <li>Un piccolo gesto può cambiare una vita: dona amore a chi non ha ancora una casa. 🐾</li>
+                <li><h4>Puoi farlo al numero:</h4></li>
+                <li>+39 356 355 1298 📞</li>
+            </ul>
+        </div>
+    
+        <div class="box-newinfo">
+            <h3>Per new info</h3>
+            <ul>
+                <li>cuccioliallegri@gmail.com</li>
+                <li>+39 345 123 2765</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="toggle-arrow open hidden" id="openArrow" onclick="apriSideMenu()">❮</div>
+
+    <script>
+        function toggleMenuleft() {
+          const menuLeft = document.getElementById('menuleft');
+          menuLeft.classList.toggle('visible');
+        }
+      </script>
+
+    <script>
+        function toggleMenu() {
+          const menu = document.querySelector('.side-menu');
+          menu.classList.toggle('visible');
+        }
+        </script>
+
+    <script>
+        function chiudiSideMenu() {
+        const menu = document.getElementById('sideMenu');
+        const openArrow = document.getElementById('openArrow');
+        const main = document.querySelector('.main');
+        const footer = document.querySelector('footer');
+    
+        menu.classList.add('hidden');
+        openArrow.classList.remove('hidden');
+        main.classList.add('wide');
+        footer.classList.add('wide'); // Aggiunto!
+        }
+    
+        function apriSideMenu() {
+        const menu = document.getElementById('sideMenu');
+        const openArrow = document.getElementById('openArrow');
+        const main = document.querySelector('.main');
+        const footer = document.querySelector('footer');
+    
+        menu.classList.remove('hidden');
+        openArrow.classList.add('hidden');
+        main.classList.remove('wide');
+        footer.classList.remove('wide'); // Aggiunto!
+        }
+    </script>
+    
+
+    <footer>
+        <div class="info-footer-3col">
+
+            <div class="colonna-contatti">
+              <h3><strong>CONTATTI INFORMAZIONE</strong></h3>
+              <ul>
+                <li><strong>Email:</strong> info@cuccioliallegri.it</li>
+                <li><strong>Telefono segreteria:</strong> +39 388 123 4567</li>
+                <li><strong>Telefono adozioni:</strong> +39 347 803 8756</li>
+              </ul>
+            </div>
+        
+            <div class="colonna-orari">
+                <h3><strong>ORARI DI APERTURA</strong></h3>
+               
+                <ul>
+                  <li><strong>Lunedì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Martedì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Mercoledì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Giovedì:</strong> 9:00 - 17:00</li>
+                </ul>
+              </div>
+              
+              <div class="colonna-orari2">
+                <h3>&nbsp;</h3> 
+                <ul>
+                  <li><strong>Venerdì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Sabato:</strong> 10:00 - 14:00</li>
+                  <li><strong>Domenica:</strong> Chiuso</li>
+                </ul>
+              </div>
+
+              <div class="colonna colonna-orari-mobile">
+                <h3><strong>Orari di apertura</strong></h3>
+                <ul>
+                  <li><strong>Lunedì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Martedì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Mercoledì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Giovedì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Venerdì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Sabato:</strong> 10:00 - 14:00</li>
+                  <li><strong>Domenica:</strong> Chiuso</li>
+                </ul>
+              </div>
+    </footer>
+              
+</body>
+
+
+
+</html>
