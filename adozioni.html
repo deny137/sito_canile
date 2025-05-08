@@ -95,8 +95,101 @@
         <p class="text"> Adottare è un atto di responsabilità e amore. Unisciti a noi nel dare una seconda chance a questi amici speciali. Ogni cane merita una casa, e tu puoi essere la persona che gli dà questa opportunità.</p>
 
         <h2 class="titoletti">I nostri cagnolini:</h2>
+
+        <div class="dogs" id="dog-container"></div>  
+
+        <h2>I nostri gattini:</h2>
+
+        <div class="cats" id="cat-container"></div>  
+
         
-        <div class="dogs">
+        <script>
+                        // Array di esempio di cani e gatti
+            const dogs = [
+            { nome: "Fido", foto: "foto-cani/cane1.jpeg", eta: 2, razza: "Labrador" },
+            { nome: "Rex", foto: "foto-cani/cane2.jpeg", eta: 3, razza: "German Shepherd" },
+            { nome: "Luna", foto: "foto-cani/cane3.jpeg", eta: 2, razza: "Bulldog" },
+            { nome: "Milo", foto: "foto-cani/cane4.jpeg", eta: 3, razza: "Beagle" },
+            { nome: "Rocky", foto: "foto-cani/cane5.jpeg", eta: 4, razza: "Pitbull" },
+            { nome: "Whisky", foto: "foto-cani/cane6.jpeg", eta: 6, razza: "Boxer" },
+            { nome: "Cloe", foto: "foto-cani/cane7.jpeg", eta: 7, razza: "Poodle" },
+            { nome: "Otto", foto: "foto-cani/cane8.jpeg", eta: 5, razza: "Cocker Spaniel" },
+            { nome: "Thor", foto: "foto-cani/cane9.jpeg", eta: 6, razza: "Doberman" },
+            { nome: "Lola", foto: "foto-cani/cane10.jpeg", eta: 3, razza: "Chihuahua" },
+            { nome: "Oscar", foto: "foto-cani/cane11.jpeg", eta: 10, razza: "Bulldog Francese" },
+            { nome: "Rocco", foto: "foto-cani/cane12.jpeg", eta: 5, razza: "Rottweiler" },
+            { nome: "Chicca", foto: "foto-cani/cane13.jpeg", eta: 9, razza: "Shih Tzu" },
+            { nome: "Astra", foto: "foto-cani/cane14.jpeg", eta: 4, razza: "Maltese" },
+            { nome: "Nino", foto: "foto-cani/cane15.jpeg", eta: 5, razza: "Dachshund" },
+            { nome: "Bruno", foto: "foto-cani/cane16.jpeg", eta: 10, razza: "Saint Bernard" },
+            { nome: "Zoe", foto: "foto-cani/cane17.jpeg", eta: 5, razza: "Husky" },
+            { nome: "Maya", foto: "foto-cani/cane18.jpeg", eta: 3, razza: "Labrador Retriever" },
+            { nome: "Tito", foto: "foto-cani/cane19.jpeg", eta: 11, razza: "Golden Retriever" },
+            { nome: "Toby", foto: "foto-cani/cane20.jpeg", eta: 6, razza: "Husky"},
+            ];
+
+           
+
+            const cats = [
+            { nome: "Micia", foto: "foto-gatti/gatto1.jpeg", eta: 1, razza: "Persian" },
+            { nome: "Tommy", foto: "foto-gatti/gatto2.jpeg", eta: 4, razza: "Siamese" },
+            { nome: "Arturo", foto: "foto-gatti/gatto3.jpeg", eta: 7, razza: "Maine Coon" },
+            { nome: "Mimì", foto: "foto-gatti/gatto4.jpeg", eta: 2, razza: "Ragdoll" },
+            { nome: "Fiamma", foto: "foto-gatti/gatto5.jpeg", eta: 7, razza: "Bengal" },
+            { nome: "Briciola", foto: "foto-gatti/gatto6.jpeg", eta: 7, razza: "British Shorthair" },
+            { nome: "Pixel", foto: "foto-gatti/gatto7.jpeg", eta: 5, razza: "Burmese" },
+            { nome: "Tabasco", foto: "foto-gatti/gatto8.jpeg", eta: 8, razza: "Sphynx" },
+            { nome: "Olivia", foto: "foto-gatti/gatto9.jpeg", eta: 6, razza: "Siberian" },
+            { nome: "Bianca", foto: "foto-gatti/gatto10.jpeg", eta: 3, razza: "Scottish Fold" },
+            { nome: "Bianchino", foto: "foto-gatti/gatto11.jpeg", eta: 10, razza: "Persian" },
+            { nome: "Macchia", foto: "foto-gatti/gatto12.jpeg", eta: 7, razza: "American Shorthair" },
+            { nome: "Piuma", foto: "foto-gatti/gatto13.jpeg", eta: 2, razza: "Abyssinian" },
+            { nome: "Cipollotto", foto: "foto-gatti/gatto14.jpeg", eta: 2, razza: "Siamese" },
+            { nome: "Zenzero", foto: "foto-gatti/gatto15.jpeg", eta: 2, razza: "Bengal" },
+            { nome: "Nina", foto: "foto-gatti/gatto16.jpeg", eta: 3, razza: "Maine Coon" },
+            { nome: "Mirtilla", foto: "foto-gatti/gatto17.jpeg", eta: 9, razza: "Ragdoll" },
+            { nome: "Camilla", foto: "foto-gatti/gatto18.jpeg", eta: 7, razza: "Scottish Fold" },
+            { nome: "Bambù", foto: "foto-gatti/gatto19.jpeg", eta: 7, razza: "British Shorthair" },
+            { nome: "Pluto", foto: "foto-gatti/gatto20.jpeg", eta: 7, razza: "Bengal" },
+            ];
+
+            // Funzione per creare il box dell'adozione
+            function createAnimalBox(animal, type) {
+            return `
+                <div class="${type}">
+                <img src="${animal.foto}" alt="${animal.nome}">
+                <div class="${type}-info">
+                    <h4>${animal.nome}</h4>
+                    <p>Età: ${animal.eta}</p>
+                    <p>Razza: ${animal.razza}</p>
+                </div>
+                </div>
+            `;
+            }
+
+            // Funzione per aggiungere i cani alla pagina
+            function addDogsToPage() {
+            const container = document.getElementById('dog-container');
+            dogs.forEach(dog => {
+                container.innerHTML += createAnimalBox(dog, 'dog');
+            });
+            }
+
+            // Funzione per aggiungere i gatti alla pagina
+            function addCatsToPage() {
+            const container = document.getElementById('cat-container');
+            cats.forEach(cat => {
+                container.innerHTML += createAnimalBox(cat, 'cat');
+            });
+            }
+
+            // Aggiungi gli animali alla pagina
+            addDogsToPage();
+            addCatsToPage();
+
+        </script>
+          
+        <!-- <div class="dogs">
             <div class="dog">
                 <img src="foto-cani/cane1.jpeg" alt="cane 1">
                 <div class="dog-info">
@@ -442,7 +535,7 @@
         const menu = document.querySelector('.side-menu');
         menu.classList.toggle('visible');
         }
-        </script>
+        </script> -->
 
     <script>
         function chiudiSideMenu() {
@@ -468,6 +561,13 @@
             
 
    <footer>
+        <p>numero di telefono: +39 347 803 8756</p>
+    </footer>  
+
+</body>
+
+
+
         <div class="info-footer-3col">
 
             <div class="colonna-contatti">
