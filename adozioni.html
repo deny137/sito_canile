@@ -26,6 +26,19 @@
         <div class="mobile-menu-icon" onclick="toggleMenu()">
             ☰
           </div>
+
+          <div class="pulsante" onclick="toggleMenuleft()">
+            ☰
+        </div>
+    
+    <div class="menuleft" id="menuleft">
+        <div class="chiudimenu" onclick="toggleMenuleft()">✖</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="volontariato.html">Volontariato</a></li>
+            <li><a href="adozioni.html">Adotta un cucciolo</a></li>
+        </ul>
+    </div>
     </header>
 
     <div class="side-menu" id="sideMenu">
@@ -412,6 +425,21 @@
         </div>
 
     </main>
+
+    <script>
+        function toggleMenuleft() {
+          const menuLeft = document.getElementById('menuleft');
+          menuLeft.classList.toggle('visible');
+        }
+      </script>
+
+    <script>
+        function toggleMenu() {
+        const menu = document.querySelector('.side-menu');
+        menu.classList.toggle('visible');
+        }
+        </script>
+
     <footer>
         <p>numero di telefono: +39 347 803 8756</p>
     </footer>   

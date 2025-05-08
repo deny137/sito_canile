@@ -25,6 +25,19 @@
         <div class="mobile-menu-icon" onclick="toggleMenu()">
             ☰
           </div>
+
+        <div class="pulsante" onclick="toggleMenuleft()">
+            ☰
+        </div>
+    
+    <div class="menuleft" id="menuleft">
+        <div class="chiudimenu" onclick="toggleMenuleft()">✖</div>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="volontariato.html">Volontariato</a></li>
+            <li><a href="adozioni.html">Adotta un cucciolo</a></li>
+        </ul>
+    </div>
     </header>
 
     <main class="main">
@@ -146,6 +159,14 @@
         </div>
 
     </div>
+
+
+    <script>
+        function toggleMenuleft() {
+          const menuLeft = document.getElementById('menuleft');
+          menuLeft.classList.toggle('visible');
+        }
+      </script>
 
     <script>
         function toggleMenu() {
