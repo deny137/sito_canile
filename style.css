@@ -207,9 +207,9 @@ body{
 
   .dogs {
     display: flex; 
-    justify-content: space-between; /* allinea gli elementi da sinistra a destra */
-    gap: 10px;  /* aggiunge spazio tra una immagine e l'altra */
-    flex-wrap: wrap; /* se nn cè spazio a sufficienza le immagini vanno a capo */
+    justify-content: space-between; 
+    gap: 10px;  
+    flex-wrap: wrap; 
     margin: 0 auto;
     padding: 0; 
   }
@@ -238,10 +238,11 @@ body{
 
   .cats {
     display: flex; 
-    justify-content: flex-start; 
+    justify-content: space-between; 
     gap: 10px;  
     flex-wrap: wrap; 
-    margin-top: 30px;
+    margin: 0 auto;
+    padding: 0; 
   }
 
   .cat {
