@@ -1,5 +1,5 @@
 body{
-.big-text{font-size: 70px;}
+.big-text{font-size: 60px;}
 .medium-text{font-size: 30px;}
 .normal-text{font-size: 17px;}
 }
@@ -16,7 +16,7 @@ body{
 .medium-text{font-size: 30px;}
 .normal-text{font-size: 17px;}
 
-.title-adozioni, .title-volontariato {
+.title-adozioni, .title-volontariato, .titoletti {
   font-family: 'Playfair Display, serif';
 }
 
@@ -339,4 +339,11 @@ body{
     }
   }
 
-  
+.box-menuprincipale {
+  background-color: #fff0f7; 
+  padding: 5px;
+  border-radius: 10px;
+  margin: 3px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-top: 10px;
+}
