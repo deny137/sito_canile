@@ -48,69 +48,72 @@
     <h1 class="big-text">CUCCIOLI ALLEGRI</h1>
 
     <div class="slider">
-            <img src="foto/slider1.jpg" alt="slide 1" id="slide1">
-            <img src="foto/slider2.jpg" alt="slide 2" id="slide2">
-            <img src="foto/slider3.jpg" alt="slide 3" id="slide3">
-            <img src="foto/slider4.jpg" alt="slide 4" id="slide4">
+            <img src="foto/slider1.jpg" alt="slide 1"  class="slider-image active" id="slide1">
+            <img src="foto/slider2.jpg" alt="slide 2"  class="slider-image" id="slide2">
+            <img src="foto/slider3.jpg" alt="slide 3"  class="slider-image" id="slide3">
+            <img src="foto/slider4.jpg" alt="slide 4"  class="slider-image" id="slide4">
 
-        <div class="slider-nav">
-            <a href="#slide1" data-slide="slide1"></a>
-            <a href="#slide2" data-slide="slide2"></a>
-            <a href="#slide3" data-slide="slide3"></a>
-            <a href="#slide4" data-slide="slide4"></a>
+            <div class="slider-nav">
+                <button id="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button id="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
 
         </div>
 
       </div>
 
-      <script>
-        const options = {
-            root: document.querySelector('.slider'),
-            rootMargin: '0px',
-            threshold: 0.5 
-        };
+      
+    <script>
+       let currentSlide = 0;
+       const slides = document.querySelectorAll('.slider-image'); 
+       let interval;
 
-        const navLinks = document.querySelectorAll('.slider-nav a');
-        const slides = document.querySelectorAll('.slider img');
+        function showSlide(index) {
+            const totalSlides = slides.length;
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const id = entry.target.id; 
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
 
-                if (entry.isIntersecting) {
-                    
-                    navLinks.forEach(link => {
-                        if (link.dataset.slide === id) {
-                            link.classList.add('active'); 
-                        } else {
-                            link.classList.remove('active'); 
-                        }
-                    });
-
-                    slides.forEach(slide => {
-                        if (slide.id === id) {
-                            slide.classList.add('active'); 
-                        } else {
-                            slide.classList.remove('active'); 
-                        }
-                    });
-                }
+            slides.forEach((slide, i) => {
+                
+                slide.style.opacity = '0';
+                slide.classList.remove('active');
             });
-        }, options);
 
-        
-        slides.forEach(slide => {
-            observer.observe(slide);
-        });
+            
+            slides[currentSlide].style.opacity = '1';
+            slides[currentSlide].classList.add('active');
+        }
 
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            navLinks[0].classList.add('active');
-        });
-    </script>  
-</body>
-      
-      
+        function moveSlide(direction) {
+            showSlide(currentSlide + direction);
+            resetInterval(); 
+        }
+
+        function startInterval() {
+            interval = setInterval(() => {
+                moveSlideWithoutReset(1); // evita il reset infinito
+            }, 3000);
+        }
+
+        function resetInterval() {
+            clearInterval(interval);
+            startInterval();
+        }
+
+        function moveSlideWithoutReset(direction) {
+            showSlide(currentSlide + direction);
+        }
+
+        showSlide(currentSlide);
+        startInterval();
+
+    </script>
 
     <h2 class="titoletti">Chi siamo?</h2>
     <p class="text">Siamo un gruppo di persone con una grande passione: gli animali. Il nostro canile nasce dal desiderio di offrire una seconda possibilità a cani e gattini che, per diversi motivi, hanno perso la loro casa.</p>
@@ -134,9 +137,9 @@
         <div class="box">
             <h3>Annunci</h3>
             <ul>
-                <li>🐶 Nuovi cuccioli disponibili!</li>
-                <li>📅 Evento adozione: 15 maggio</li>
-                <li>🤝 Cerchiamo volontari</li>
+                <li><a href="adozioni.html">🐶 Nuovi cuccioli disponibili!</a></li>
+                <li><a href="volontariato.html">📅 Evento adozione: 15 maggio</a></li>
+                <li><a href="volontariato.html">🤝 Cerchiamo volontari</a></li>
             </ul>
         </div>
 
@@ -183,14 +186,11 @@
           menu.classList.toggle('visible');
         }
         </script>
-        
 
     <footer>
         <p>numero di telefono: +39 347 803 8756</p>
-    </footer>   
+    </footer>    
 
 </body>
-
-
 
 </html>
