@@ -9,61 +9,8 @@
 </head>
 
 
-<body class="body">
-    <header class="header">
-        <div class="logo">
-            <img src="foto/logo.png" alt="">
-        </div>
-        <div class="menu"><ul>
-                <li> <a href="index.html">Home</a></li>
-                <li><a href="volontariato.html">Volontariato</a></li>
-                <li><a href="adozioni.html">Adotta un cucciolo</a></li>
-                <li></li>
-        </ul>
-        </div>
 
-        <div class="mobile-menu-icon" onclick="toggleMenu()">
-            ☰
-          </div>
-
-        <div class="pulsante" onclick="toggleMenuleft()">
-            ☰
-        </div>
-    
-    <div class="menuleft" id="menuleft">
-        <div class="chiudimenu" onclick="toggleMenuleft()">✖</div>
-        <div class="box-menuprincipale">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="volontariato.html">Volontariato</a></li>
-                <li><a href="adozioni.html">Adotta un cucciolo</a></li>
-            </ul>
-        </div>
-    </div>
-    </header>
-
-    <main class="main">
-
-    
-    <h1 class="big-text">CUCCIOLI ALLEGRI</h1>
-
-    <div class="slider">
-            <img src="foto/slider1.jpg" alt="slide 1" id="slide1">
-            <img src="foto/slider2.jpg" alt="slide 2" id="slide2">
-            <img src="foto/slider3.jpg" alt="slide 3" id="slide3">
-            <img src="foto/slider4.jpg" alt="slide 4" id="slide4">
-
-        <div class="slider-nav">
-            <a href="#slide1" data-slide="slide1"></a>
-            <a href="#slide2" data-slide="slide2"></a>
-            <a href="#slide3" data-slide="slide3"></a>
-            <a href="#slide4" data-slide="slide4"></a>
-
-        </div>
-
-      </div>
-
-      <script>
+ <!-- <script>
         const options = {
             root: document.querySelector('.slider'),
             rootMargin: '0px',
@@ -107,7 +54,111 @@
         document.addEventListener('DOMContentLoaded', () => {
             navLinks[0].classList.add('active');
         });
-    </script>  
+    </script>   -->
+<body class="body">
+    <header class="header">
+        <div class="logo">
+            <img src="foto/logo.png" alt="">
+        </div>
+        <div class="menu"><ul>
+                <li> <a href="index.html">Home</a></li>
+                <li><a href="volontariato.html">Volontariato</a></li>
+                <li><a href="adozioni.html">Adotta un cucciolo</a></li>
+                <li></li>
+        </ul>
+        </div>
+
+        <div class="mobile-menu-icon" onclick="toggleMenu()">
+            ☰
+          </div>
+
+        <div class="pulsante" onclick="toggleMenuleft()">
+            ☰
+        </div>
+    
+    <div class="menuleft" id="menuleft">
+        <div class="chiudimenu" onclick="toggleMenuleft()">✖</div>
+        <div class="box-menuprincipale">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="volontariato.html">Volontariato</a></li>
+                <li><a href="adozioni.html">Adotta un cucciolo</a></li>
+            </ul>
+        </div>
+    </div>
+    </header>
+
+    <main class="main">
+
+    
+    <h1 class="big-text">CUCCIOLI ALLEGRI</h1>
+
+    <div class="slider">
+        <img src="foto/slider1.jpg" class="slider-image active" alt="Slide 1">
+        <img src="foto/slider2.jpg" class="slider-image" alt="Slide 2">
+        <img src="foto/slider3.jpg" class="slider-image" alt="Slide 3">
+        <img src="foto/slider4.jpg" class="slider-image" alt="Slide 4">
+
+            <div class="slider-nav">
+                <button id="prev" class="slider-nav prev"><</button>
+                <button id="next" class="slider-nav next">></button>
+              </div>
+
+        <!-- <div class="slider-nav">
+            <a href="#slide1" >1</a>
+            <a href="#slide2" >2</a>
+            <a href="#slide3" >3</a>
+            <a href="#slide4" >4</a> -->
+
+            
+        </div>
+
+      </div>
+
+      <script>
+        const slides = document.querySelectorAll('.slider-image');
+        let currentIndex = 0;
+        let slideInterval;  // Variabile per memorizzare l'ID dell'intervallo
+
+        // Funzione per mostrare la slide
+        function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) slide.classList.add('active');
+        });
+        }
+
+        // Funzione per passare alla slide successiva
+        function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+        resetInterval();  // Reset del timer ogni volta che cambia la slide
+        }
+
+        // Funzione per passare alla slide precedente
+        function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+        resetInterval();  // Reset del timer ogni volta che cambia la slide
+        }
+
+        // Funzione per resetare il timer
+        function resetInterval() {
+        clearInterval(slideInterval);  // Cancella il vecchio intervallo
+        slideInterval = setInterval(nextSlide, 3000);  // Avvia un nuovo intervallo con 3 secondi
+        }
+
+        // Aggiungi gli eventi per i bottoni
+        document.getElementById('next').addEventListener('click', nextSlide);
+        document.getElementById('prev').addEventListener('click', prevSlide);
+
+        // Imposta l'intervallo iniziale per cambiare la slide automaticamente ogni 3 secondi
+        slideInterval = setInterval(nextSlide, 3000);
+
+      </script>
+      
+
+     
 </body>
       
       
@@ -255,6 +306,11 @@
                   <li><strong>Domenica:</strong> Chiuso</li>
                 </ul>
               </div>
+
+    
+
+
+
     </footer>
               
 </body>
