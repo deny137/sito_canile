@@ -24,6 +24,11 @@ body{
   font-family: 'Georgia', serif;
 }
 
+
+/* MENU PRINCIPALE E HEADER  */
+
+
+
 .header {
     top: 0;
     left: 0;
@@ -34,18 +39,12 @@ body{
     z-index:1000;
 }
 
-.logo img {width: auto; height: 70px;}
-
 .menu li{display: inline-block; margin-left: 1px;}
 .menu a{color: black; padding: 10px; display: block;}
 .menu {width: 100%;
         background-color: rgba(255, 255, 255, 0.903);
     } 
-
-.main {
-    padding-top: 60px;
-    margin-right: 240px;
-}
+.logo img {width: auto; height: 70px;}
 
 .pulsante {
     display: none;
@@ -102,6 +101,114 @@ body{
       display: none; /* Nasconde le voci */
     }
   }
+
+.box-menuprincipale {
+  background-color: #fff0f7; 
+  padding: 5px;
+  border-radius: 10px;
+  margin: 3px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  margin-top: 10px;
+}
+
+
+/* FOOTER */
+
+
+
+
+.footer{
+    
+    left: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    background-color: white;
+    margin-right: 0px; 
+    transition: margin-right 0.3s ease;
+}
+
+
+.footer li {display: inline-block;}
+
+
+.footer.wide {
+  margin-right: 240px;
+}
+
+ 
+.info-footer-3col {
+  display: flex;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.colonna-orari, .colonna-contatti {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.colonna-contatti, .colonna-orari {
+  flex: 1;
+  min-width: 200px;
+}
+
+footer {
+  margin-right: 240px; 
+  transition: margin-right 0.3s ease;
+}
+
+footer.wide {
+  margin-right: 0;
+}
+
+.colonna-orari-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .footer-colonne {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .colonna-orari {
+    display: none;
+  }
+
+  .colonna-orari-mobile {
+    display: block;
+  }
+
+  .colonna {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+/* MAIN */
+
+
+.main {
+    padding-top: 60px;
+    margin-right: 240px;
+}
+
+
+
+/* SIDE MENU */
+
 
 
 .side-menu{
@@ -161,13 +268,13 @@ body{
   display: none !important;
 }
 
-.main {
+.main{
   padding-top: 60px;
   margin-right: 240px; 
   transition: margin-right 0.3s ease;
 }
 
-.main.wide {
+.main.wide{
   margin-right: 0; 
 }
 
@@ -206,6 +313,102 @@ body{
   }
 }
 
+.mobile-menu-icon {
+    display: none;
+    font-size: 30px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1100;
+    cursor: pointer;
+  }
+  
+  /* Nascondi side-menu su schermi piccoli */
+  @media (max-width: 768px) {
+    .side-menu {
+      display: none;
+      position: fixed;
+      right: 0;
+      top: 0;
+      height: 100%;
+      background-color: white;
+      width: 200px;
+      padding: 20px;
+      box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+    }
+  
+    .side-menu.visible {
+      display: block;
+    }
+  
+    .mobile-menu-icon {
+      display: block;
+    }
+  
+    .main {
+      margin-right: 0; 
+    }
+  }
+
+  .close-button {
+    display: none;
+    font-size: 24px;
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: 15px;
+  }
+  
+  @media (max-width: 768px) {
+    .close-button {
+      display: block;
+    }
+  }
+
+
+  .box {
+    background-color: #fff0f7; 
+    padding: 20px;
+    border-radius: 10px;
+    margin: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  .box-eventi {
+    background-color: #fff0f7; 
+    padding: 20px;
+    border-radius: 10px;
+    margin: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 10px;
+  }
+
+  .box-donazioni {
+    background-color: #fff0f7; 
+    padding: 20px;
+    border-radius: 10px;
+    margin: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 10px;
+  }
+
+  .box-newinfo {
+    background-color: #fff0f7; 
+    padding: 20px;
+    border-radius: 10px;
+    margin: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+
+
+
+/* SLIDER */
+
+
+
+
 .slider {
     display: flex;
     overflow: hidden;
@@ -235,38 +438,12 @@ body{
   z-index: 1;
 }
 
-/* .slider img#slide1 {
-  opacity: 1;       
-  z-index: 1;
-}
-
-.slider img:target {
-  opacity: 1;       
-  z-index: 1;
-} */
 
 .slider-container {
     position: relative;
     width: 100%;
 }
 
-/* .slider img {
-    position: absolute;
-    flex: 0 0 100%;
-    height: 100%;
-    object-fit: cover;
-    scroll-snap-align: start;
-    opacity: 0.8; 
-    transition: opacity 0.5s ease-in-out; 
-    z-index: 1;
-
-  } */
-
-
-
-/* .slider img.active {
-    opacity: 1;
-} */
 
 .slider-nav button {
   background-color: rgba(255, 255, 255, 0.5);
@@ -292,15 +469,7 @@ body{
   background-color: rgb(159, 158, 158);
 }
 
-/* .slider-nav {
-  position: absolute;
-  bottom: 15px;
-  left: 50%;
-  gap: 10px;
-  display: flex;
-  transform: translateX(-50%);
-  z-index: 100;
-} */
+
 
 .slider-nav a {
   width: 14px;
@@ -318,6 +487,9 @@ body{
 .slider-nav a:focus {
   background-color: #ff88cc;
 }
+
+
+/* CANI E GATTI ADOZIONI */
 
 
 
@@ -383,152 +555,12 @@ body{
     font-size: 14px;
   }
 
-  .box {
-    background-color: #fff0f7; /* rosa chiaro */
-    padding: 20px;
-    border-radius: 10px;
-    margin: 3px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  }
-
-  .box-eventi {
-    background-color: #fff0f7; 
-    padding: 20px;
-    border-radius: 10px;
-    margin: 3px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-top: 10px;
-  }
-
-  .box-donazioni {
-    background-color: #fff0f7; 
-    padding: 20px;
-    border-radius: 10px;
-    margin: 3px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-top: 10px;
-  }
-
-  .box-newinfo {
-    background-color: #fff0f7; 
-    padding: 20px;
-    border-radius: 10px;
-    margin: 3px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    margin-top: 10px;
-    margin-bottom: 30px;
-  }
-
-  .mobile-menu-icon {
-    display: none;
-    font-size: 30px;
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 1100;
-    cursor: pointer;
-  }
   
-  /* Nascondi side-menu su schermi piccoli */
-  @media (max-width: 768px) {
-    .side-menu {
-      display: none;
-      position: fixed;
-      right: 0;
-      top: 0;
-      height: 100%;
-      background-color: white;
-      width: 200px;
-      padding: 20px;
-      box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-    }
   
-    .side-menu.visible {
-      display: block;
-    }
+
   
-    .mobile-menu-icon {
-      display: block;
-    }
-  
-    .main {
-      margin-right: 0; 
-    }
-  }
 
-  .close-button {
-    display: none;
-    font-size: 24px;
-    text-align: left;
-    cursor: pointer;
-    margin-bottom: 15px;
-  }
-  
-  @media (max-width: 768px) {
-    .close-button {
-      display: block;
-    }
-  }
 
-.box-menuprincipale {
-  background-color: #fff0f7; 
-  padding: 5px;
-  border-radius: 10px;
-  margin: 3px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  margin-top: 10px;
-}
 
-.info-footer-3col {
-  display: flex;
-  border-radius: 10px;
-  width: 90%;
-  margin: auto;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 10px;
-}
 
-.colonna-orari, .colonna-contatti, .colonna-orari2 {
-  font-size: 14px;
-  margin-bottom: 8px;
-}
 
-.colonna-contatti, .colonna-orari, .colonna-orari2 {
-  flex: 1;
-  min-width: 200px;
-}
-
-footer {
-  margin-right: 240px; 
-  transition: margin-right 0.3s ease;
-}
-
-footer.wide {
-  margin-right: 0;
-}
-
-.colonna-orari-mobile {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .footer-colonne {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .colonna-orari,
-  .colonna-orari2 {
-    display: none;
-  }
-
-  .colonna-orari-mobile {
-    display: block;
-  }
-
-  .colonna {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-}
