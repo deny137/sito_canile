@@ -63,7 +63,7 @@ body{
     top: 0;
     left: 0;
     height: 100%;
-    background-color: white;
+    background-color: rgb(252, 227, 244);
     width: 200px;
     padding: 20px;
     box-shadow: 2px 0 8px rgba(0,0,0,0.2);
@@ -110,7 +110,7 @@ body{
   right: 0;       
   width: 200px;  
   height: 100%;   
-  background-color: rgba(255, 255, 255, 0.903);
+  background-color: rgb(252, 227, 244);
   padding: 15px;
   border-left: 2px solid #ccc;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
@@ -467,7 +467,6 @@ footer.wide {
   display: none;
 }
 
-/* Responsive (mobile) */
 @media (max-width: 768px) {
   .footer-colonne {
     flex-direction: column;

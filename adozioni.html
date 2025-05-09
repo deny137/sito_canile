@@ -538,21 +538,35 @@
         </script> -->
 
     <script>
+        function toggleMenuleft() {
+            const menuLeft = document.getElementById('menuleft');
+            menuLeft.classList.toggle('visible');
+        }
+        </script>
+    
+    <script>
+        function toggleMenu() {
+        const menu = document.querySelector('.side-menu');
+        menu.classList.toggle('visible');
+        }
+        </script>
+    
+    <script>
         function chiudiSideMenu() {
         const menu = document.getElementById('sideMenu');
         const openArrow = document.getElementById('openArrow');
         const main = document.querySelector('.main');
-
+    
         menu.classList.add('hidden');
         openArrow.classList.remove('hidden');
         main.classList.add('wide');
         }
-
+    
         function apriSideMenu() {
         const menu = document.getElementById('sideMenu');
         const openArrow = document.getElementById('openArrow');
         const main = document.querySelector('.main');
-
+    
         menu.classList.remove('hidden');
         openArrow.classList.add('hidden');
         main.classList.remove('wide');
