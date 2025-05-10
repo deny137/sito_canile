@@ -20,13 +20,26 @@ body{
   font-family: 'Playfair Display, serif';
 }
 
-.text {
-  font-family: 'Georgia', serif;
+.titoletti {
+  font-size: 30px;
 }
 
+.title-volontariato {
+  font-size: 60px;
+}
+
+.text {
+  font-family: 'Georgia', serif;
+  font-size: 18px;
+}
+
+.wrapper {
+  max-width: 1200px; 
+  margin: 0 auto;
+  padding: 0 60px; 
+}
 
 /* MENU PRINCIPALE E HEADER  */
-
 
 
 .header {
@@ -113,8 +126,6 @@ body{
 
 
 /* FOOTER */
-
-
 
 
 .footer{
@@ -556,11 +567,140 @@ footer.wide {
   }
 
   
+  /* VOLONTARIATO */
+
+  .blocco-volontariato {
+    margin: 20px 0;
+  }
+
+  .volontariato-testo {
+    flex: 2;
+    min-width: 250px;
+    max-width: 500px;
+  }
+
+  .volontariato-testo .text {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .volontariato-immagine {
+    flex: 1;
+    text-align: center;
+  }
+
+  .contenuto-volontariato {
+    display: flex;
+    align-items: center; 
+    gap: 20px;
+    flex-wrap: nowrap;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .volontariato-immagine img {
+    max-width: 380px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .contenuto-volontariato {
+      flex-direction: column;
+      align-items: stretch;
+    }
   
-
+    .volontariato-immagine {
+      order: 1;
+    }
   
+    .volontariato-testo {
+      order: 2;
+      text-align: left;
+      padding: 0 15px;
+    }
 
+    .volontariato-testo h2 {
+      margin-top: 10px;
+    }
 
+    .volontariato-immagine img {
+      max-width: 90%; 
+    }
+  }
 
+  .blocco-volontariato-destra {
+    margin: 30px 0;
+  }
+  
+  .contenuto-volontariato-destra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+  }
+  
+  .volontariato-testo-destra {
+    flex: 2;
+    min-width: 250px;
+    max-width: 500px;
+  }
+  
+  .volontariato-immagine-destra {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .volontariato-immagine-destra img {
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
 
+  @media (min-width: 1200px) {
+    .volontariato-immagine-destra img {
+      max-width: 520px;   
+      height: auto;
+    }
+  }
 
+  @media (max-width: 768px) {
+    .contenuto-volontariato-destra {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .volontariato-immagine-destra {
+      order: 1;
+      text-align: center;
+    }
+  
+    .volontariato-testo-destra {
+      order: 2;
+      text-align: left;
+      padding: 0 15px;
+    }
+  
+    .volontariato-immagine-destra img {
+      max-width: 100%;
+    }
+  }
+
+  .volontariato-immagine2 img {
+    border-radius: 10px;
+  }
+  
+  @media (min-width: 1200px) {
+    .volontariato-immagine2 img {
+      max-width: 480px;
+    }
+  }
+
+  .distanza-testo li {
+    line-height: 1.5;
+  }
+  
