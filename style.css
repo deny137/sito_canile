@@ -15,12 +15,27 @@
 .medium-text{font-size: 30px;}
 .normal-text{font-size: 17px;}
 
+.big-text{
+  font-family: 'Playfair Display', serif;
+  font-size: 70px;
+}
+
 .title-adozioni, .title-volontariato, .titoletti {
   font-family: 'Playfair Display, serif';
 }
 
 .titoletti {
   font-size: 30px;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+.margine {
+  margin-top: 80px;
+}
+
+.margine2 {
+  margin-top: 40px;
 }
 
 .title-volontariato {
@@ -30,6 +45,11 @@
 .text {
   font-family: 'Georgia', serif;
   font-size: 18px;
+  margin: 0 auto 20px;
+  margin-top: 20px;
+  text-align: left;
+  max-width: 800px;
+  line-height: 1.6;
 }
 
 .wrapper {
@@ -429,8 +449,8 @@ footer.wide {
     border-radius: 0px;
     position: relative;
     transition: transform 0.5s ease-in-out;
-    
-   
+    max-width: 800px;
+    margin: 0 auto;
   }
   
 .slider-image {
@@ -502,35 +522,45 @@ footer.wide {
   background-color: #ff88cc;
 }
 
+.slider-e-testo {
+  max-width: 800px; 
+  margin: 0 auto;
+}
+
+.testo-home {
+  padding: 0 20px; 
+}
 
 /* CANI E GATTI ADOZIONI */
 
 
 
-  .dogs {
-    display: flex; 
-    justify-content: space-between; 
-    gap: 10px;  
-    flex-wrap: wrap; 
-    margin: 0 auto;
-    padding: 0; 
-  }
+.dogs, .cats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
 
-  .dog {
-    text-align: center;
-    background-color: whitesmoke;
-    border-radius: 5px;
-    width: 250px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+.dog, .cat {
+  text-align: center;
+  background-color: whitesmoke;
+  border-radius: 5px;
+  width: 200px;
+  max-width: 260;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
-  .dog img {
-    width: 100%;
-    height: 200px;
-    border-radius: 5px;
-    object-fit: cover;
-  }
+.dog img, .cat img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+}
 
   .dog-info {
     padding: 10px;
@@ -538,35 +568,32 @@ footer.wide {
     font-size: 14px;
   }
 
-  .cats {
-    display: flex; 
-    justify-content: space-between; 
-    gap: 10px;  
-    flex-wrap: wrap; 
-    margin: 0 auto;
-    padding: 0; 
-  }
-
-  .cat {
-    text-align: center;
-    background-color: whitesmoke;
-    border-radius: 5px;
-    width: 250px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .cat img {
-    width: 100%;
-    height: 200px;
-    border-radius: 5px;
-    object-fit: cover;
-  }
 
   .cat-info {
     padding: 10px;
     background-color: #fff0f7;
     font-size: 14px;
+  }
+
+  @media (min-width: 1200px) {
+    .dogs,
+    .cats {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .dogs,
+    .cats {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .dogs,
+    .cats {
+      grid-template-columns: 1fr;
+    }
   }
 
   /* CUBOTTI HOME PAGE */
@@ -741,6 +768,6 @@ footer.wide {
   }
 
   .distanza-testo li {
-    line-height: 1.5;
+    line-height: 1.2;
   }
   
