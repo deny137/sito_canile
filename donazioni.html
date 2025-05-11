@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Donazioni</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="foto/logo.png" alt="">
+        </div>
+        <div class="menu"><ul>
+                <li> <a href="index.html">Home</a></li>
+                <li><a href="volontariato.html">Volontariato</a></li>
+                <li><a href="adozioni.html">Adotta un cucciolo</a></li>
+                <li><a href="donazioni.html">Donazioni</a></li>
+                <li></li>
+        </ul>
+        </div>
+
+        <div class="mobile-menu-icon" onclick="toggleMenu()">
+            ☰
+          </div>
+
+        <div class="pulsante" onclick="toggleMenuleft()">
+            ☰
+        </div>
+    
+    <div class="menuleft" id="menuleft">
+        <div class="chiudimenu" onclick="toggleMenuleft()">✖</div>
+        <div class="box-menuprincipale">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="volontariato.html">Volontariato</a></li>
+                <li><a href="adozioni.html">Adotta un cucciolo</a></li>
+                <li><a href="donazioni.html">Donazioni</a></li>
+            </ul>
+        </div>
+    </div>
+    </header>
+
+    <div class="side-menu" id="sideMenu">
+        <div class="close-button" onclick="toggleMenu()">✖</div>
+        <div class="toggle-arrow close" onclick="chiudiSideMenu()">❯</div>
+    
+        <div class="box">
+            <h3>Annunci</h3>
+            <ul>
+                <li>🐶 Nuovi cuccioli disponibili!</li>
+                <li>📅 Evento adozione: 15 maggio</li>
+                <li>🤝 Cerchiamo volontari</li>
+            </ul>
+        </div>
+
+        <div class="box-eventi">
+            <h3>Eventi 2025</h3>
+            <ul>
+                <li>07-07-2025 📅</li>
+                <li>21-09-2025 📅</li>
+                <li>14-11-2025 📅</li>
+            </ul>
+        </div>
+
+        <div class="box-donazioni">
+            <h3>Donazioni</h3>
+            <ul>
+                <li>Un piccolo gesto può cambiare una vita: dona amore a chi non ha ancora una casa. 🐾</li>
+                <li></li>
+                <li><h4>Puoi farlo al numero:</h4></li>
+                <li>+39 356 355 1298 📞</li>
+            </ul>
+        </div>
+
+        <div class="box-newinfo">
+            <h3>Per new info</h3>
+            <ul>
+                <li>cuccioliallegri@gmail.com</li>
+                <li>+39 345 123 2765</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="toggle-arrow open hidden" id="openArrow" onclick="apriSideMenu()">❮</div>
+
+
+    <div class="wrapper">
+        <main class="main">
+            <section class="donazioni-info">
+                <h1 class="big-text">DONAZIONI</h1>
+                <h2 class="titoletti margine">AIUTACI CON UNA DONAZIONE</h2>
+                <p class="text">Ogni giorno a Cuccioli Allegri ci prendiamo cura di decine di cani e gatti: li nutriamo, li curiamo, li coccoliamo e facciamo il possibile per trovare loro una famiglia. Ma tutto questo ha un costo.</p>
+                <p class="text">Con la tua donazione, anche piccola, ci aiuterai a garantire cibo, medicine, sterilizzazioni, coperte e cure veterinarie ai nostri amici a quattro zampe.</p>
+                <p class="text">Puoi scegliere tu l'importo e il motivo della donazione. Grazie di cuore da parte nostra e dei nostri cuccioli!</p></p>
+            </section>
+
+            <section class="forma-donazione">
+                <h3>Compila il modulo per donare</h3>
+                <form action="grazie.html" method="post">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" required>
+
+                    <label for="email">Email (per conferma):</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="importo">Importo della donazione (€):</label>
+                    <input type="number" name="importo" id="importo" min="1" required>
+
+                    <label for="motivo">Motivo della donazione:</label>
+                    <select name="motivo" id="motivo">
+                        <option value="generale">Supporto generale</option>
+                        <option value="cibo">Cibo e alimentazione</option>
+                        <option value="cure">Cure veterinarie</option>
+                        <option value="progetti">Progetti speciali</option>
+                    </select>
+
+                    <label for="messaggio">Messaggio (facoltativo):</label>
+                    <textarea name="messaggio" id="messaggio" rows="4"></textarea>
+
+                    <button type="submit">Invia e procedi alla donazione</button>
+                </form>
+            </section>
+
+        </main>
+    </div>
+
+
+    <script>
+        function toggleMenuleft() {
+            const menuLeft = document.getElementById('menuleft');
+            menuLeft.classList.toggle('visible');
+        }
+        </script>
+    
+    <script>
+        function toggleMenu() {
+        const menu = document.querySelector('.side-menu');
+        menu.classList.toggle('visible');
+        }
+        </script>
+    
+    <script>
+        function chiudiSideMenu() {
+        const menu = document.getElementById('sideMenu');
+        const openArrow = document.getElementById('openArrow');
+        const main = document.querySelector('.main');
+    
+        menu.classList.add('hidden');
+        openArrow.classList.remove('hidden');
+        main.classList.add('wide');
+        }
+    
+        function apriSideMenu() {
+        const menu = document.getElementById('sideMenu');
+        const openArrow = document.getElementById('openArrow');
+        const main = document.querySelector('.main');
+    
+        menu.classList.remove('hidden');
+        openArrow.classList.add('hidden');
+        main.classList.remove('wide');
+        }
+    </script>
+            
+
+   <footer>
+        <p>&copy; 2025 Cuccioli Allegri - Tutti i diritti riservati</p>
+        <div class="info-footer-3col">
+
+            <div class="colonna-contatti">
+              <h3><strong>CONTATTI INFORMAZIONE</strong></h3>
+              <ul>
+                <li><strong>Email:</strong> info@cuccioliallegri.it</li>
+                <li><strong>Telefono segreteria:</strong> +39 388 123 4567</li>
+                <li><strong>Telefono adozioni:</strong> +39 347 803 8756</li>
+              </ul>
+            </div>
+        
+            <div class="colonna-orari">
+                <h3><strong>ORARI DI APERTURA</strong></h3>
+               
+                <ul>
+                  <li><strong>Lunedì-Venerdì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Sabato:</strong> 10:00 - 14:00</li>
+                  <li><strong>Domenica:</strong> Chiuso</li>
+                </ul>
+              </div>
+              
+    
+              <div class="colonna colonna-orari-mobile">
+                <h3><strong>Orari di apertura</strong></h3>
+                <ul>
+                  <li><strong>Lunedì-Venerdì:</strong> 9:00 - 17:00</li>
+                  <li><strong>Sabato:</strong> 10:00 - 14:00</li>
+                  <li><strong>Domenica:</strong> Chiuso</li>
+                </ul>
+              </div>
+    </footer>
+
+</body>
+  
+</html>

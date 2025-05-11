@@ -1,8 +1,10 @@
-
-
-.body{
+body{
     background-color: #ffe8f7;
     font-family: sans-serif;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 .titolo-homepage{
@@ -20,7 +22,7 @@
   font-size: 70px;
 }
 
-.title-adozioni, .title-volontariato, .titoletti {
+.title-adozioni, .title-volontariato, .title-donazioni, .titoletti {
   font-family: 'Playfair Display, serif';
 }
 
@@ -37,6 +39,7 @@
 .margine2 {
   margin-top: 40px;
 }
+
 
 .title-volontariato {
   font-size: 60px;
@@ -245,7 +248,7 @@ footer.wide {
   position: fixed;
   top: 0;         
   right: 0;       
-  width: 200px;  
+  width: 250px;  
   height: 100%;   
   background-color: rgb(252, 227, 244);
   padding: 15px;
@@ -274,19 +277,20 @@ footer.wide {
 
 .toggle-arrow {
   position: fixed;
+  right: 0;
   top: 50%;
   transform: translateY(-50%);
   font-size: 24px;
   cursor: pointer;
   background-color: white;
   padding: 5px 10px;
-  border-radius: 0 5px 5px 0;
+  border-radius: 5px 0 0 5px;
   box-shadow: 0 0 5px rgba(0,0,0,0.2);
   z-index: 2000;
 }
 
 .toggle-arrow.close {
-  right: 200px; 
+  right: 240px; 
 }
 
 .toggle-arrow.open {
@@ -771,3 +775,88 @@ footer.wide {
     line-height: 1.2;
   }
   
+  /* DONAZIONI */
+
+  .forma-donazione {
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fdcae9bf;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: width 0.3s ease, max-width 0.3s ease;
+  }
+
+  .forma-donazione h3 {
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+  }
+
+  .forma-donazione label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: black;
+  }
+
+  .forma-donazione input, .forma-donazione select, .forma-donazione textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #f7e2f1;
+    border-radius: 6px;
+    font-size: 15px;
+    display: block;
+  }
+
+  .forma-donazione button {
+    background-color: #fff0f7;
+    color: black;
+    border: none;
+    padding: 12px 20px;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0,3s ease;
+  }
+
+  .forma-donazione button:hover {
+    background-color: #fd98dfbb;
+  }
+
+  .main .forma-donazione {
+    width: 100%;
+    max-width: 800px;
+    transition: width 0.3s ease, max-width 0.3s ease;
+  }
+
+  .main.wide .forma-donazione {
+    width: 100%;
+  }
+
+  @media (max-width: 850px) {
+    .forma-donazione {
+      width: 90%;
+      padding: 20px;
+    }
+  }
+
+  .main:not(.wide) .forma-donazione {
+    max-width: 600px;
+  }
+
+  @media (max-width: 768px) {
+    .forma-donazione {
+      width: 90%;
+      max-width: 90%;
+      padding: 15px;
+    }
+
+    .main {
+      margin-right: 0 !important;
+      padding: 0 10px;
+    }
+  }
