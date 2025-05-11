@@ -423,10 +423,10 @@ footer.wide {
 .slider {
     display: flex;
     overflow: hidden;
-    gap: 10px;
+    gap: 0px;
     padding: 10px;
     scroll-behavior: auto;
-    height: 500px;
+    height: 600px;
     border-radius: 10px;
     position: relative;
     transition: transform 0.5s ease-in-out;
