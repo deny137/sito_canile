@@ -18,7 +18,6 @@
                 <li> <a href="index.html">Home</a></li>
                 <li><a href="volontariato.html">Volontariato</a></li>
                 <li><a href="adozioni.html">Adotta un cucciolo</a></li>
-                <li><a href="donazioni.html">Donazioni</a></li>
                 <li></li>
         </ul>
         </div>
@@ -38,117 +37,125 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="volontariato.html">Volontariato</a></li>
                 <li><a href="adozioni.html">Adotta un cucciolo</a></li>
-                <li><a href="donazioni.html">Donazioni</a></li>
             </ul>
         </div>
     </div>
     </header>
 
-    <div class="wrapper"> 
-      <main class="main">
+    <main class="main">
 
-        <h1 class="big-text">CUCCIOLI ALLEGRI</h1>
+    
+    <h1 class="titolo-homepage">CUCCIOLI ALLEGRI</h1>
 
-      <div class="slider-e-testo">   
-        <div class="slider">
-              <img src="foto/slider1.jpg" id="slide1"   class="slider-image active" alt="Slide 1">
-              <img src="foto/slider2.jpg" id="slide2"   class="slider-image" alt="Slide 2">
-              <img src="foto/slider3.jpg" id="slide3"   class="slider-image" alt="Slide 3">
-              <img src="foto/slider4.jpg" id="slide4"   class="slider-image" alt="Slide 4">
+    <div class="slider">
+        <img src="foto/slider1.jpg" id="slide1"   class="slider-image active" alt="Slide 1">
+        <img src="foto/slider2.jpg" id="slide2"   class="slider-image" alt="Slide 2">
+        <img src="foto/slider3.jpg" id="slide3"   class="slider-image" alt="Slide 3">
+        <img src="foto/slider4.jpg" id="slide4"   class="slider-image" alt="Slide 4">
 
-                  <div class="slider-nav">
-                      <button id="prev" class="slider-nav prev"><</button>
-                      <button id="next" class="slider-nav next">></button>
-                  </div>
-            </div>
-
-          <script>
-            const slides = document.querySelectorAll('.slider-image');
-            let currentIndex = 0;
-            let slideInterval;  // Variabile per memorizzare l'ID dell'intervallo
-
-            // Funzione per mostrare la slide
-            function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
-            });
-            }
-
-            // Funzione per passare alla slide successiva
-            function nextSlide() {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
-            resetInterval();  // Reset del timer ogni volta che cambia la slide
-            }
-
-            // Funzione per passare alla slide precedente
-            function prevSlide() {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            showSlide(currentIndex);
-            resetInterval();  // Reset del timer ogni volta che cambia la slide
-            }
-
-            // Funzione per resetare il timer
-            function resetInterval() {
-            clearInterval(slideInterval);  // Cancella il vecchio intervallo
-            slideInterval = setInterval(nextSlide, 3000);  // Avvia un nuovo intervallo con 3 secondi
-            }
-
-            // Aggiungi gli eventi per i bottoni
-            document.getElementById('next').addEventListener('click', nextSlide);
-            document.getElementById('prev').addEventListener('click', prevSlide);
-
-            // Imposta l'intervallo iniziale per cambiare la slide automaticamente ogni 3 secondi
-            slideInterval = setInterval(nextSlide, 3000);
-
-          </script>
-          
-          <div class="cubotti">
-              <div class="cubotto"> 
-                  <img src="foto/slider1.jpg" alt="cubotto1">
-                  <p class="cubotto-txt"> chi siamo </p>
+            <div class="slider-nav">
+                <button id="prev" class="slider-nav prev"><</button>
+                <button id="next" class="slider-nav next">></button>
               </div>
-          </div>
-          
-          
-          <h2 class="titoletti margine2">CHI SIAMO</h2>
-          <p class="text">Siamo un gruppo di persone con una grande passione: gli animali. Il nostro canile nasce dal desiderio di offrire una seconda possibilità a cani e gattini che, per diversi motivi, hanno perso la loro casa.</p>
-          <p class="text">Ogni giorno ci prendiamo cura di loro con amore, pazienza e rispetto, perché per noi non sono solo ospiti... sono parte della nostra famiglia. Accogliamo, curiamo, coccoliamo e, soprattutto, cerchiamo per ognuno di loro una nuova casa dove poter ricominciare.</p>
-          <p class="text">Crediamo che ogni cane meriti una vita piena di affetto e dignità, e facciamo del nostro meglio per regalargliela.
-          <p class="text">Se anche tu ami gli animali come noi, vieni a conoscerci: potresti trovare un nuovo amico che ti sta già aspettando con la coda che scodinzola!</p>
 
-          <h2 class="titoletti margine2">LA NOSTRA STORIA</h2>
-          <p class="text">Tutto È cominciato con un piccolo sogno e un grande amore per gli animali.</p>
-          <p class="text">Anni fa, in un angolo tranquillo della nostra città, alcune persone con il cuore grande hanno deciso di unire le forze per creare un rifugio sicuro per cani e gatti in difficoltà.così è nato <em>Cuccioli Allegri</em>.</p>
-          <p class="text">Inizialmente avevamo solo qualche cuccia, una staccionata e tanta buona volontà. Col tempo, grazie al sostegno di volontari, donatori e famiglia adottive, il nostro rifugio è cresciuto, diventando una vera casa centinaia di animali.</p>
-          <p class="text">Ogni cucciolo che accogliamo a una storia diversa: c'è chi è stato abbandonato, chi è nato per strada, che ha conosciuto la paura e la solitudine. Ma qui da noi trovano calore, cura e la possibilità di una nuova nuova vita.</p>
-          <p class="text">Il nostro impegno non si limita all'accoglienza: promuoviamo l'adozione responsabile, organizziamo eventi sul territorio e collaboriamo con scuole associazioni per diffondere il rispetto e l'amore verso gli animali.</p>
-          <p class="text"><em>Cuccioli Allegri</em> è più di un canile/gattile. È una famiglia allargata catalizzante, code scodinzolanti e cuori generosi. E siamo felici di condividerla con tutti voi.</p>
 
-          <h2 class="titoletti margine2">EVENTI E NOVITÁ</h2>
-          <p class="text">Cuccioli Allegri non è solo un rifugio: è una comunità viva, fatta di persone che amano gli animali e vogliono fare la differenza. Organizziamo regolarmente eventi aperti al pubblico come giornate di adozione, passeggiate con i cani, visite guidate al rifugio, raccolte di cibo e materiali utili, laboratori educativi per bambini e tanto altro!</p>
-          <p class="text">Partecipare ai nostri eventi è un’occasione per conoscere i nostri ospiti pelosi, passare del tempo in compagnia, fare qualcosa di buono e, chissà... magari innamorarsi di un nuovo amico a quattro zampe.</p>
-          <p class="text">Seguici sui nostri social o controlla spesso questa sezione per non perderti le prossime iniziative: ogni evento è un passo in più verso una vita migliore per i nostri cuccioli.</p>
+            
+        </div>
 
-          <h2 class="titoletti margine2">SEGUICI SUI SOCIAL</h2>
-          <p class="text">I social sono il nostro modo preferito per restare in contatto con te e con tutti gli amici degli animali! Su Instagram e Facebook condividiamo ogni giorno foto dei nostri cuccioli, storie di adozione, aggiornamenti sugli eventi, richieste urgenti di aiuto, e momenti teneri e divertenti dal rifugio.</p>
-          <p class="text">Seguendo Cuccioli Allegri sui social potrai:</p>
-          <ul>
-            <li class="text">Conoscere i nuovi arrivati al canile/gattile</li>
-            <li class="text">Scoprire chi ha trovato casa grazie a voi</li>
-            <li class="text">Partecipare virtualmente alla vita quotidiana del rifugio</li>
-            <li class="text">Aiutarci a diffondere le storie degli animali in cerca di famiglia</li>
-          </ul>
-          <p class="text">Ogni like, commento o condivisione fa la differenza: insieme possiamo dare più visibilità ai nostri cuccioli e aumentare le possibilità che vengano adottati!</p>
-          <div style="display: flex;">
-            <p class="text">📸 Instagram: @cuccioliallegri</p>
-            <p class="text margine3">👍 Facebook: Cuccioli Allegri - Canile e Gattile</p>
-          </div>
-
-        </main>
       </div>
+
+      <script>
+        const slides = document.querySelectorAll('.slider-image');
+        let currentIndex = 0;
+        let slideInterval;  // Variabile per memorizzare l'ID dell'intervallo
+
+        // Funzione per mostrare la slide
+        function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === index) slide.classList.add('active');
+        });
+        }
+
+        // Funzione per passare alla slide successiva
+        function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+        resetInterval();  // Reset del timer ogni volta che cambia la slide
+        }
+
+        // Funzione per passare alla slide precedente
+        function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        showSlide(currentIndex);
+        resetInterval();  // Reset del timer ogni volta che cambia la slide
+        }
+
+        // Funzione per resetare il timer
+        function resetInterval() {
+        clearInterval(slideInterval);  // Cancella il vecchio intervallo
+        slideInterval = setInterval(nextSlide, 3000);  // Avvia un nuovo intervallo con 3 secondi
+        }
+
+        // Aggiungi gli eventi per i bottoni
+        document.getElementById('next').addEventListener('click', nextSlide);
+        document.getElementById('prev').addEventListener('click', prevSlide);
+
+        // Imposta l'intervallo iniziale per cambiare la slide automaticamente ogni 3 secondi
+        slideInterval = setInterval(nextSlide, 3000);
+
+      </script>
+    
+    <div class="cubotti">
+        <!-- <div class="cubotto"> 
+            <img src="chisiamo.png" alt="cubotto1">
+            <p class="cubotto-txt"> chi siamo </p>
+        </div> -->
+
+        <div class="cubotto"> 
+            <img src="dovecitroviamo.png" alt="cubotto1">
+            <p class="cubotto-txt"> dove ci troviamo </p>
+        </div>
+
+        <div class="cubotto"> 
+            <img src="consigli.png" alt="cubotto1">
+            <p class="cubotto-txt"> consigli </p>
+        </div>
+
+        <div class="cubotto"> 
+            <img src="adottauncucciolo.png" alt="cubotto1">
+            <p class="cubotto-txt">  adozioni </p>
+        </div>
+
+        <div class="cubotto"> 
+            <img src="uniscitianoi.png" alt="cubotto1">
+            <p class="cubotto-txt"> unisciti a noi</p>
+        </div>
+
+        <div class="cubotto"> 
+            <img src="trovatouncane.png" alt="cubotto1">
+            <p class="cubotto-txt"> hai trovato un cane? </p>
+        </div> 
     </div>
+
+
+    
+    
+    <h2 class="titoletti">Chi siamo?</h2>
+    <p class="text">Siamo un gruppo di persone con una grande passione: gli animali. Il nostro canile nasce dal desiderio di offrire una seconda possibilità a cani e gattini che, per diversi motivi, hanno perso la loro casa.</p>
+    <p class="text">Ogni giorno ci prendiamo cura di loro con amore, pazienza e rispetto, perché per noi non sono solo ospiti... sono parte della nostra famiglia. Accogliamo, curiamo, coccoliamo e, soprattutto, cerchiamo per ognuno di loro una nuova casa dove poter ricominciare.</p>
+    <p class="text">Crediamo che ogni cane meriti una vita piena di affetto e dignità, e facciamo del nostro meglio per regalargliela.
+    <p class="text">Se anche tu ami gli animali come noi, vieni a conoscerci: potresti trovare un nuovo amico che ti sta già aspettando con la coda che scodinzola!</p>
+
+    <h2 class="titoletti">La nostra storia</h2>
+    <p class="text">Tutto È cominciato con un piccolo sogno e un grande amore per gli animali.</p>
+    <p class="text">Anni fa, in un angolo tranquillo della nostra città, alcune persone con il cuore grande hanno deciso di unire le forze per creare un rifugio sicuro per cani e gatti in difficoltà.così è nato <em>Cuccioli Allegri</em>.</p>
+    <p class="text">Inizialmente avevamo solo qualche cuccia, una staccionata e tanta buona volontà. Col tempo, grazie al sostegno di volontari, donatori e famiglia adottive, il nostro rifugio è cresciuto, diventando una vera casa centinaia di animali.</p>
+    <p class="text">Ogni cucciolo che accogliamo a una storia diversa: c'è chi è stato abbandonato, chi è nato per strada, che ha conosciuto la paura e la solitudine. Ma qui da noi trovano calore, cura e la possibilità di una nuova nuova vita.</p>
+    <p class="text">Il nostro impegno non si limita all'accoglienza: promuoviamo l'adozione responsabile, organizziamo eventi sul territorio e collaboriamo con scuole associazioni per diffondere il rispetto e l'amore verso gli animali.</p>
+    <p class="text"><em>Cuccioli Allegri</em> è più di un canile/gattile. È una famiglia allargata catalizzante, code scodinzolanti e cuori generosi. E siamo felici di condividerla con tutti voi.</p>
+
+    </main>
     
     <div class="side-menu" id="sideMenu">
         <div class="close-button" onclick="toggleMenu()">✖</div>
