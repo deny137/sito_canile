@@ -801,7 +801,7 @@ footer.wide {
     color: black;
   }
 
-  .forma-donazione input, .forma-donazione select, .forma-donazione textarea {
+   .forma-donazione input, .forma-donazione select /* .forma-donazione textarea */ {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
