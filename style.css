@@ -30,14 +30,14 @@ body{
 }
 
 .title-adozioni, .title-volontariato, .title-donazioni, .titoletti, .title-consigli {
-  font-family: 'Playfair Display, serif';
+  font-family: 'Playfair Display', serif;
   font-size: 60px;
   margin-top: 20px;
-  text-align: left;
+  text-align: center;
 }
 
 .titoletti {
-  font-size: 30px;
+  font-size: 50px;
   max-width: 800px;
   margin: 0 auto 20px;
 }
@@ -48,6 +48,7 @@ body{
 
 .margine2 {
   margin-top: 40px;
+  
 }
 
 
@@ -60,13 +61,13 @@ body{
   font-size: 18px;
   margin: 0 auto 20px;
   margin-top: 20px;
-  text-align: left;
-  max-width: 800px;
+  text-align: center;
+  max-width: 1000px;
   line-height: 1.6;
 }
 
 .wrapper {
-  max-width: 1200px; 
+  /* max-width: 1200px;  */
   margin: 0 auto;
   padding: 0 60px; 
 }
@@ -448,108 +449,6 @@ footer.wide {
 
 
 
-/* SLIDER */
-
-
-
-
-.slider {
-    display: flex;
-    overflow: hidden;
-    gap: 0px;
-    padding: 0;
-    scroll-behavior: auto;
-    height: 630px;
-    border-radius: 0px;
-    position: relative;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-    margin: 0 auto;
-  }
-  
-.slider-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-  z-index: 0;
-}
-
-.slider-image.active {
-  opacity: 1;
-  z-index: 1;
-}
-
-
-.slider-container {
-    position: relative;
-    width: 100%;
-    
-    
-}
-
-
-.slider-nav button {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 24px;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-.slider-nav .prev {
-  left: 10px;
-}
-
-.slider-nav .next {
-  right: 10px;
-}
-.slider-nav button:hover {
-  background-color: rgb(159, 158, 158);
-}
-
-
-
-.slider-nav a {
-  width: 14px;
-  height: 14px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  display: inline-block;
-  text-indent: -9999px;
-  overflow: hidden;
-  border: 1px solid #999;
-  transition: background-color 3s;
-}
-
-.slider-nav a:hover,
-.slider-nav a:focus {
-  background-color: #ff88cc;
-}
-
-.slider-e-testo {
-  max-width: 800px; 
-  margin: 0 auto;
-}
-
-@media (max-width: 768px) {
-  .slider{
-    height: 300px;
-    width: auto;
-  }
-}
-.testo-home {
-  padding: 0 20px; 
-}
 
 /* CANI E GATTI ADOZIONI */
 
@@ -557,22 +456,22 @@ footer.wide {
 
 .dogs, .cats {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0px;
   justify-items: center;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px 0;
+  margin-right: 0px ;
+  /* padding: 20px 0; */
 }
 
 .dog, .cat {
   text-align: center;
   background-color: whitesmoke;
   border-radius: 5px;
-  width: 200px;
-  max-width: 260;
+  width: 70%;
+  max-width: 70%;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ margin-top: 40px;
 }
 
 .dog img, .cat img {
@@ -598,7 +497,7 @@ footer.wide {
   @media (min-width: 1200px) {
     .dogs,
     .cats {
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
   
@@ -615,6 +514,36 @@ footer.wide {
       grid-template-columns: 1fr;
     }
   }
+
+  
+.lightbox {
+  display: none;  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);  
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.lightbox img {
+  max-width: 80%;
+  max-height: 80%;
+  transition: transform 0.3s ease;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
 
   /* CUBOTTI HOME PAGE */
 
@@ -902,7 +831,214 @@ footer.wide {
     }
 
     .main {
-      margin-right: 0 !important;
-      padding: 0 10px;
+      margin-right: 0 ;
+      padding: 0 ;
     }
   }
+
+
+/* SLIDER */
+
+
+.slider {
+    display: flex;
+    overflow: hidden;
+    gap: 0px;
+    padding: 0;
+    scroll-behavior: auto;
+    height: 630px;
+    border-radius: 0px;
+    position: relative;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+.slider-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+ 
+}
+
+.slider-image.active {
+  opacity: 20;
+  z-index: 1;
+}
+
+
+.slider-container {
+    position: relative;
+    width: 100%;
+    
+    
+}
+
+
+/* .slider-nav button {
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 24px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.slider-nav .prev {
+  left: 10px;
+}
+
+.slider-nav .next {
+  right: 10px;
+}
+.slider-nav button:hover {
+  background-color: rgb(159, 158, 158);
+}
+
+
+.slider-nav a {
+  width: 14px;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  display: inline-block;
+  text-indent: -9999px;
+  overflow: hidden;
+  border: 1px solid #999;
+  transition: background-color 3s;
+}
+
+.slider-nav a:hover,
+.slider-nav a:focus {
+  background-color: #ff88cc;
+}
+
+.slider-e-testo {
+  max-width: 800px; 
+  margin: 0 auto;
+} */
+
+@media (max-width: 768px) {
+  .slider{
+    height: 300px;
+    width: auto;
+  }
+}
+.testo-home {
+  padding: 0 20px;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;  
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  color: white; 
+  text-align: center;
+  z-index: 10;
+  font-size: 30px;  
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+
+.hero-text p {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+
+/* .slider-nav button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+} */
+
+
+.slider-bottone {
+  background-color: #ff6b6b; 
+  color: white;              
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;      
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+.slider-bottone:hover {
+  background-color: #ff5599;
+}
+
+
+/* Font moderno e colori neutri */
+
+
+nav {
+  background-color: #34495e;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+nav a:hover {
+  background-color: #2c3e50;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+
+
+.card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+
+
+.highlight {
+  color: #3498db;
+  font-weight: bold;
+}
+
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Animazione */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

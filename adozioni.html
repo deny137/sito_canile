@@ -92,8 +92,8 @@
 
     <div class="wrapper">
         <main class="main">
-            <h1 class="title-adozioni">ADOZIONI</h1>
-            <h2 class="titoletti margine">Adotta un Amico, Cambia una Vita</h2>
+            
+            <h1 class="titoletti margine2">ADOTTA UN AMICO, CAMBIA UNA VITA</h1>
             <p class="text"> L'adozione di un cane o un gatto è un atto di amore che può trasformare la vita di un animale e quella di chi lo accoglie. Ogni giorno, i nostri cani e gatti aspettano una famiglia che li accolga e li faccia sentire amati e protetti. Con l'adozione, non solo offri una casa a un animale bisognoso, ma guadagni anche un compagno fedele che arricchirà la tua vita.</p>
             <p class="text"> In questa sezione troverai i cani e i gatti disponibili per l'adozione, ognuno con la propria storia, personalità e caratteristiche uniche. Se pensi che uno di loro possa essere il tuo nuovo amico a quattro zampe, contattaci per maggiori informazioni o per fissare un incontro.</p>
             <p class="text"> Adottare è un atto di responsabilità e amore. Unisciti a noi nel dare una seconda chance a questi amici speciali. Ogni cane merita una casa, e tu puoi essere la persona che gli dà questa opportunità.</p>
@@ -106,7 +106,12 @@
 
             <div class="cats" id="cat-container"></div>  
         </div>
-        
+        <!-- Lightbox (modale per ingrandire l'immagine) -->
+        <div id="lightbox" class="lightbox">
+            <span id="close-lightbox" class="close-lightbox">✖</span>
+            <img id="lightbox-img" src="" alt="Immagine Ingrandita">
+        </div>
+
         <script>
                         // Array di esempio di cani e gatti
             const dogs = [
@@ -227,6 +232,46 @@
         openArrow.classList.add('hidden');
         main.classList.remove('wide');
         }
+
+            // Aggiungi l'evento di click su ogni immagine del cane
+    document.querySelectorAll('.dog img').forEach(image => {
+        image.addEventListener('click', function() {
+            // Mostra il lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            // Imposta l'immagine da mostrare nel lightbox
+            lightboxImg.src = this.src;
+            lightbox.style.display = 'flex';
+        });
+    });
+
+    // Aggiungi l'evento di click su ogni immagine del gatto
+    document.querySelectorAll('.cat img').forEach(image => {
+        image.addEventListener('click', function() {
+            // Mostra il lightbox
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+
+            // Imposta l'immagine da mostrare nel lightbox
+            lightboxImg.src = this.src;
+            lightbox.style.display = 'flex';
+        });
+    });
+
+    // Chiudi il lightbox quando clicchi sulla X
+    document.getElementById('close-lightbox').addEventListener('click', function() {
+        document.getElementById('lightbox').style.display = 'none';
+    });
+
+    // Chiudi il lightbox cliccando fuori dall'immagine
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this) {
+            this.style.display = 'none';
+        }
+    });
+
+
     </script>
             
 

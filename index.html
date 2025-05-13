@@ -46,8 +46,16 @@
 
     <main class="main">
 
-    
-    <h1 class="titolo-homepage">CUCCIOLI ALLEGRI</h1>
+        <!-- prova -->
+        <!-- <section class="hero-banner">
+            <div class="hero-text">
+                <h1>Benvenuto in Cuccioli Allegri</h1>
+                <p>Un rifugio di amore, speranza e code scodinzolanti 🐾</p>
+                <a href="adozioni.html" class="hero-bottone">Scopri i cuccioli</a>
+            </div>
+          </section>
+           -->
+    <!-- <h1 class="titolo-homepage">CUCCIOLI ALLEGRI</h1> -->
 
     <div class="slider">
         <img src="foto/slider1.jpg" id="slide1"   class="slider-image active" alt="Slide 1">
@@ -59,6 +67,11 @@
                 <button id="prev" class="slider-nav prev"><</button>
                 <button id="next" class="slider-nav next">></button>
               </div>
+              <div class="hero-text">
+                <h1> Cuccioli Allegri</h1>
+                <p>Un rifugio di amore, speranza e code scodinzolanti 🐾</p>
+                <a href="adozioni.html" class="slider-bottone">Scopri i cuccioli</a>
+            </div>
 
 
             
@@ -66,12 +79,13 @@
 
       </div>
 
+      
+
       <script>
         const slides = document.querySelectorAll('.slider-image');
         let currentIndex = 0;
-        let slideInterval;  // Variabile per memorizzare l'ID dell'intervallo
-
-        // Funzione per mostrare la slide
+        let slideInterval;  
+        
         function showSlide(index) {
         slides.forEach((slide, i) => {
             slide.classList.remove('active');
@@ -79,31 +93,25 @@
         });
         }
 
-        // Funzione per passare alla slide successiva
+       
         function nextSlide() {
         currentIndex = (currentIndex + 1) % slides.length;
         showSlide(currentIndex);
-        resetInterval();  // Reset del timer ogni volta che cambia la slide
+        resetInterval();  
         }
 
-        // Funzione per passare alla slide precedente
+        
         function prevSlide() {
         currentIndex = (currentIndex - 1 + slides.length) % slides.length;
         showSlide(currentIndex);
-        resetInterval();  // Reset del timer ogni volta che cambia la slide
+        resetInterval(); 
         }
-
-        // Funzione per resetare il timer
+       
         function resetInterval() {
-        clearInterval(slideInterval);  // Cancella il vecchio intervallo
-        slideInterval = setInterval(nextSlide, 3000);  // Avvia un nuovo intervallo con 3 secondi
+        clearInterval(slideInterval);  
+        slideInterval = setInterval(nextSlide, 3000);  
         }
-
-        // Aggiungi gli eventi per i bottoni
-        document.getElementById('next').addEventListener('click', nextSlide);
-        document.getElementById('prev').addEventListener('click', prevSlide);
-
-        // Imposta l'intervallo iniziale per cambiare la slide automaticamente ogni 3 secondi
+        
         slideInterval = setInterval(nextSlide, 3000);
 
       </script>
@@ -152,9 +160,7 @@
     </div>
 
 
-    
-    
-    <h2 class="titoletti margine2">CHI SIAMO?</h2>
+<h2 class="title-donazioni">CHI SIAMO?</h2>
     <p class="text">Siamo un gruppo di persone con una grande passione: gli animali. Il nostro canile nasce dal desiderio di offrire una seconda possibilità a cani e gattini che, per diversi motivi, hanno perso la loro casa.</p>
     <p class="text">Ogni giorno ci prendiamo cura di loro con amore, pazienza e rispetto, perché per noi non sono solo ospiti... sono parte della nostra famiglia. Accogliamo, curiamo, coccoliamo e, soprattutto, cerchiamo per ognuno di loro una nuova casa dove poter ricominciare.</p>
     <p class="text">Crediamo che ogni cane meriti una vita piena di affetto e dignità, e facciamo del nostro meglio per regalargliela.
@@ -168,6 +174,23 @@
     <p class="text">Il nostro impegno non si limita all'accoglienza: promuoviamo l'adozione responsabile, organizziamo eventi sul territorio e collaboriamo con scuole associazioni per diffondere il rispetto e l'amore verso gli animali.</p>
     <p class="text"><em>Cuccioli Allegri</em> è più di un canile/gattile. È una famiglia allargata catalizzante, code scodinzolanti e cuori generosi. E siamo felici di condividerla con tutti voi.</p>
 
+    <section class="card fade-in">
+        <h2>EVENTI E NOVITÁ</h2>
+        <p>Cuccioli Allegri non è solo un rifugio: è una comunità viva, fatta di persone che amano gli animali e vogliono fare la differenza. Organizziamo regolarmente eventi aperti al pubblico come giornate di adozione, passeggiate con i cani, visite guidate al rifugio, raccolte di cibo e materiali utili, laboratori educativi per bambini e tanto altro!
+        Seguici sui nostri social o controlla spesso questa sezione per non perderti le prossime iniziative
+    </p>
+      </section>
+  
+      <section class="card fade-in">
+        <h2>SEGUICI SUI SOCIAl</h2>
+        <p>Ogni like, commento o condivisione fa la differenza: insieme possiamo dare più visibilità ai nostri cuccioli e aumentare le possibilità che vengano adottati! 📸 Instagram: @cuccioliallegri  👍 Facebook: Cuccioli Allegri - Canile e Gattile</p>
+      </section>
+  
+      
+  
+      
+    
+<!--     
     <h2 class="titoletti margine2">EVENTI E NOVITÁ</h2>
     <p class="text">Cuccioli Allegri non è solo un rifugio: è una comunità viva, fatta di persone che amano gli animali e vogliono fare la differenza. Organizziamo regolarmente eventi aperti al pubblico come giornate di adozione, passeggiate con i cani, visite guidate al rifugio, raccolte di cibo e materiali utili, laboratori educativi per bambini e tanto altro!</p>
     <p class="text">Partecipare ai nostri eventi è un’occasione per conoscere i nostri ospiti pelosi, passare del tempo in compagnia, fare qualcosa di buono e, chissà... magari innamorarsi di un nuovo amico a quattro zampe.</p>
@@ -183,7 +206,7 @@
         <li class="text">Aiutarci a diffondere le storie degli animali in cerca di famiglia</li>
     </ul>
     <p class="text">Ogni like, commento o condivisione fa la differenza: insieme possiamo dare più visibilità ai nostri cuccioli e aumentare le possibilità che vengano adottati!</p>
-    <p class="text">📸 Instagram: @cuccioliallegri  👍 Facebook: Cuccioli Allegri - Canile e Gattile</p>
+    <p class="text">📸 Instagram: @cuccioliallegri  👍 Facebook: Cuccioli Allegri - Canile e Gattile</p> -->
 
     </main>
     
