@@ -29,8 +29,11 @@ body{
   font-size: 70px;
 }
 
-.title-adozioni, .title-volontariato, .title-donazioni, .titoletti {
+.title-adozioni, .title-volontariato, .title-donazioni, .titoletti, .title-consigli {
   font-family: 'Playfair Display, serif';
+  font-size: 60px;
+  margin-top: 20px;
+  text-align: left;
 }
 
 .titoletti {
