@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>volontariato</title>
+    <link rel="stylesheet" href="style.css">
+</head>  
+
+<body class="body">
+    <header class="header">
+        <div class="logo">
+            <img src="foto/logo.png" alt="">
+        </div>
+        <div class="menu"><ul>
+            <li> <a href="index.html">Home</a></li>
+            <li><a href="volontariato.html">Volontariato</a></li>
+            <li><a href="adozioni.html">Adotta un cucciolo</a></li>
+            <li><a href="donazioni.html">Donazioni</a></li>
+            <li><a href="dovecitroviamo.html">Vieni a trovarci</a></li>
+            <li><a href="consigli.html">Consigli</a></li>
+        </ul>
+        </div>
+
+        <div class="mobile-menu-icon" onclick="toggleMenu()">
+            ☰
+          </div>
+
+          <div class="pulsante" onclick="toggleMenuleft()">
+            ☰
+        </div>
+    
+    <div class="menuleft" id="menuleft">
+        <div class="chiudimenu" onclick="toggleMenuleft()">✖</div>
+        <div class="box-menuprincipale">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="volontariato.html">Volontariato</a></li>
+                <li><a href="adozioni.html">Adotta un cucciolo</a></li>
+                <li><a href="donazioni.html">Donazioni</a></li>
+            </ul>
+        </div>
+    </div>
+    </header>
+
+    <div class="side-menu" id="sideMenu">
+        <div class="close-button" onclick="toggleMenu()">✖</div>
+        <div class="toggle-arrow close" onclick="chiudiSideMenu()">❯</div>
+    
+        <div class="box">
+            <h3>Annunci</h3>
+            <ul>
+                <li>🐶 Nuovi cuccioli disponibili!</li>
+                <li>📅 Evento adozione: 15 maggio</li>
+                <li>🤝 Cerchiamo volontari</li>
+            </ul>
+        </div>
+
+        <div class="box-eventi">
+            <h3>Eventi 2025</h3>
+            <ul>
+                <li>07-07-2025 📅</li>
+                <li>21-09-2025 📅</li>
+                <li>14-11-2025 📅</li>
+            </ul>
+        </div>
+
+        <div class="box-donazioni">
+            <h3>Donazioni</h3>
+            <ul>
+                <li>Un piccolo gesto può cambiare una vita: dona amore a chi non ha ancora una casa. 🐾</li>
+                <li></li>
+                <li><h4>Puoi farlo al numero:</h4></li>
+                <li>+39 356 355 1298 📞</li>
+            </ul>
+        </div>
+
+        <div class="box-newinfo">
+            <h3>Per new info</h3>
+            <ul>
+                <li>info@cuccioliallegri.it</li>
+                <li>+39 345 123 2765</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="toggle-arrow open hidden" id="openArrow" onclick="apriSideMenu()">❮</div>
+    
+
+    <div class="wrapper">
+        <main class="main">
+            <h1 class="title-volontariato">VOLONTARIATO</h1>
+
+
+            <div class="blocco-volontariato">
+                <div class="contenuto-volontariato">
+                    <div class="volontariato-immagine-1">
+                        <img src="foto/volontariato4.jpeg" alt="Volontariato 4">
+                    </div>
+                    <div class="volontariato-testo">
+                        <h2 class="titoletti margine2">Un piccolo gesto può cambiare una vita</h2>
+                        <p class="text">Hai mai pensato che bastano poche ore del tuo tempo per fare la differenza nella vita di un animale?</p>
+                        <p class="text">Diventare volontario al canile/gattile <em>Cuccioli Allegri</em> significa offrire amore, cura e compagnia a cuccioli che aspettano solo una seconda possibilità.</p>
+                        <p class="text">Senza i nostri volontari, tutto questo non sarebbe possibile.</p>
+                    </div>
+                </div>
+            </div>
+            
+                        
+                        
+
+            <div class="blocco-volontariato-destra">
+                <div class="contenuto-volontariato-destra">
+                  <div class="volontariato-immagine-destra">
+                    <img src="foto/volontariato1.jpeg" alt="Volontario 1">
+                  </div>
+                  <div class="volontariato-testo-destra">
+                    <h2 class="titoletti margine2">Cosa puoi fare come Volontario</h2>
+                    <p class="text">Non serve essere esperti: bastano passione, costanza e voglia di aiutare.</p>
+                    <p class="text">Ecco come puoi contribuire:</p>
+                    <ul class="distanza-testo ul">
+                      <li class="text">Dare da mangiare ai cani e ai gatti</li>
+                      <li class="text">Pulire gli spazi e sistemare le cucce</li>
+                      <li class="text">Portare i cani a passeggio</li>
+                      <li class="text">Coccolare i gattini e farli socializzare</li>
+                      <li class="text">Aiutarci durante eventi, banchetti o giornate aperte</li>
+                      <li class="text">Scattare foto per le adozioni e aiutarci a gestire i social</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+
+
+              <div class="blocco-volontariato">
+                <div class="contenuto-volontariato">
+                  <div class="volontariato-immagine2">
+                    <img src="foto/volontariato2.jpeg" alt="Volontariato 2">
+                  </div>
+                  <div class="volontariato-testo">
+                    <h2 class="titoletti margine2">Quando e come</h2>
+                    <p class="text">Puoi venire anche solo qualche ora a settimana, oppure partecipare agli eventi quando puoi.</p>
+                    <p class="text">Siamo aperti al volontariato da parte di:</p>
+                    <ul class="ul">
+                      <li class="text">Adulti</li>
+                      <li class="text">Studenti</li>
+                      <li class="text">Famiglie</li>
+                      <li class="text">Associazioni o gruppi scolastici</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+
+            
+              <div class="blocco-volontariato-destra">
+                <div class="contenuto-volontariato-destra">
+                  <div class="volontariato-immagine-destra">
+                    <img src="foto/volontariato3.jpeg" alt="Volontario 3">
+                  </div>
+                <div class="volontariato-testo-destra">
+                    <h2 class="titoletti">Come diventare volontario</h2>
+                    <p class="text">Durante il primo colloquio ti illustreremo il nostro rifugio, ti presenteremo i cuccioli e ti mostreremo le attività che potresti svolgere.</p>
+                    <p class="text">Dopo il primo periodo di ambientamento, potrai scegliere quanto tempo dedicare e in quali attività sentirti più utile.</p>
+                    <p class="text">Ogni volontario è una parte fondamentale della nostra famiglia, e ognuno porta qualcosa di unico.</p>
+                    <p class="text"><strong>Email volontariato:</strong> volontari@cuccioliallegri.it<br>
+                    <strong>Telefono:</strong> +39 345 456 7890</p>
+                  </div>
+                </div>
+              </div>
+        </main>
+    
+        <script>
+            function toggleMenuleft() {
+            const menuLeft = document.getElementById('menuleft');
+            menuLeft.classList.toggle('visible');
+            }
+        </script>
+
+        <script>
+            function toggleMenu() {
+            const menu = document.querySelector('.side-menu');
+            menu.classList.toggle('visible');
+            }
+            </script>
+
+        <script>
+            function chiudiSideMenu() {
+            const menu = document.getElementById('sideMenu');
+            const openArrow = document.getElementById('openArrow');
+            const main = document.querySelector('.main');
+
+            menu.classList.add('hidden');
+            openArrow.classList.remove('hidden');
+            main.classList.add('wide');
+            }
+
+            function apriSideMenu() {
+            const menu = document.getElementById('sideMenu');
+            const openArrow = document.getElementById('openArrow');
+            const main = document.querySelector('.main');
+
+            menu.classList.remove('hidden');
+            openArrow.classList.add('hidden');
+            main.classList.remove('wide');
+            }
+        </script>
+          
+
+    </div> 
+    
+        <footer class="footer">
+            <div class="info-footer-3col">
+
+                <div class="colonna-contatti">
+                    <h3><strong>CONTATTI INFORMAZIONE</strong></h3>
+                    <ul>
+                    <li><strong>Email:</strong> info@cuccioliallegri.it</li>
+                    <li><strong>Telefono segreteria:</strong> +39 388 123 4567</li>
+                    <li><strong>Telefono adozioni:</strong> +39 347 803 8756</li>
+                    </ul>
+                </div>
+            
+                <div class="colonna-orari">
+                    <h3><strong>ORARI DI APERTURA</strong></h3>
+                    
+                    <ul>
+                        <li><strong>Lunedì-Venerdì:</strong> 9:00 - 17:00</li>
+                        <li><strong>Sabato:</strong> 10:00 - 14:00</li>
+                        <li><strong>Domenica:</strong> Chiuso</li>
+                    </ul>
+                    </div>
+                    
+
+                    <div class="colonna colonna-orari-mobile">
+                    <h3><strong>Orari di apertura</strong></h3>
+                    <ul>
+                        <li><strong>Lunedì-Venerdì:</strong> 9:00 - 17:00</li>
+                        <li><strong>Sabato:</strong> 10:00 - 14:00</li>
+                        <li><strong>Domenica:</strong> Chiuso</li>
+                    </ul>
+                    </div>
+            
+        </footer>
+      
+</body>
+
+
+</html>
