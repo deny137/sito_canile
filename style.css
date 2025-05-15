@@ -29,7 +29,7 @@ body{
   font-size: 70px;
 }
 
-.title-adozioni, .title-volontariato, .title-donazioni, .titoletti, .title-consigli {
+.title-adozioni, .title-volontariato, .title-donazioni, .titoletti, .title-consigli, .title-dovecitroviamo {
   font-family: 'Playfair Display', serif;
   font-size: 60px;
   margin-top: 20px;
@@ -67,7 +67,6 @@ body{
 }
 
 .wrapper {
-  /* max-width: 1200px;  */
   margin: 0 auto;
   padding: 0 60px; 
 }
@@ -139,12 +138,12 @@ body{
   
     .menu {
       height: 70px;
-      background-color: rgba(255, 255, 255, 0.903); /* stessa trasparenza */
+      background-color: rgba(255, 255, 255, 0.903); 
       display: block;
     }
   
     .menu ul {
-      display: none; /* Nasconde le voci */
+      display: none; 
     }
   }
 
@@ -162,7 +161,6 @@ body{
 
 
 .footer{
-    
     left: 0;
     display: flex;
     flex-direction: column; 
@@ -174,6 +172,7 @@ body{
     background-color: white;
     margin-right: 0px; 
     transition: margin-right 0.3s ease;
+    margin-top: 40px;
 }
 
 
@@ -368,7 +367,7 @@ footer.wide {
     cursor: pointer;
   }
   
-  /* Nascondi side-menu su schermi piccoli */
+  
   @media (max-width: 768px) {
     .side-menu {
       display: none;
@@ -460,7 +459,6 @@ footer.wide {
   gap: 0px;
   justify-items: center;
   margin-right: 0px ;
-  /* padding: 20px 0; */
 }
 
 .dog, .cat {
@@ -549,12 +547,12 @@ footer.wide {
 
   .cubotti {
     display: flex; 
-    justify-content: center;  /*space beetween */
+    justify-content: center; 
     gap: 10px;  
     flex-wrap: wrap; 
     margin-top: 100px;
     margin-bottom: 100px;
-    /* max-width: 600px; */ 
+   
     
   }
 
@@ -565,7 +563,7 @@ footer.wide {
     overflow: hidden;
     text-align: center;
     transition: transform 0.2s ease;
-    /* box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); */
+    
   }
 
   .cubotto:hover {
@@ -575,7 +573,6 @@ footer.wide {
   .cubotto img{
     width: 100%;
     height: 200px;
-    /* border-radius: 5px; */
     object-fit: cover;
   }
 
@@ -610,6 +607,7 @@ footer.wide {
     color: inherit;
     display: inline-block;
   }
+  
   /* VOLONTARIATO */
 
   .blocco-volontariato {
@@ -749,7 +747,19 @@ footer.wide {
   .distanza-testo li {
     line-height: 1.2;
   }
+
+  .volontariato-immagine-1 img{
+    width: 480px;
+    border-radius: 10px;
+  }
   
+
+  .ul {
+    list-style-position: inside;
+    text-align: center;
+    padding-left: 0;
+  }
+
   /* DONAZIONI */
 
   .forma-donazione {
@@ -1041,4 +1051,104 @@ a:hover {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+/* vieni a trovarci */
+
+.mappa-container {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+.mappa-base {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+}
+
+.punto {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: rgba(255, 126, 253, 0.878);
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.tooltip {
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(50, 50, 50, 0.75);
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 14px;
+  display: none;
+  z-index: 10;
+}
+
+.punto:hover .tooltip {
+  display: block;
+}
+
+.mappa-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+  flex-wrap: nowrap;
+}
+
+.mappa-container {
+  position: relative;
+  width: 60%;
+  min-width: 300px;
+}
+
+.titolo-laterale {
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.titolo-laterale h2 {
+  font-size: 28px;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+  text-align: right;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .mappa-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .titolo-laterale {
+    width: 100%;
+    margin-top: 0;
+    justify-content: center;
+    text-align: center;
+    order: -1;
+  }
+
+  .titolo-laterale h2 {
+    text-align: center;
+  }
+
+  .mappa-container {
+    width: 100%;
+    order: 0;
+  }
 }
