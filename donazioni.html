@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-
 <body>
     <header class="header">
         <div class="logo">
@@ -33,17 +32,19 @@
             ☰
         </div>
     
-    <div class="menuleft" id="menuleft">
-        <div class="chiudimenu" onclick="toggleMenuleft()">✖</div>
-        <div class="box-menuprincipale">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="volontariato.html">Volontariato</a></li>
-                <li><a href="adozioni.html">Adotta un cucciolo</a></li>
-                <li><a href="donazioni.html">Donazioni</a></li>
-            </ul>
+        <div class="menuleft" id="menuleft">
+            <div class="chiudimenu" onclick="toggleMenuleft()">✖</div>
+            <div class="box-menuprincipale">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="volontariato.html">Volontariato</a></li>
+                    <li><a href="adozioni.html">Adotta un cucciolo</a></li>
+                    <li><a href="donazioni.html">Donazioni</a></li>
+                    <li><a href="dovecitroviamo.html">Vieni a trovarci</a></li>
+                    <li><a href="consigli.html">Consigli</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
     </header>
 
     <div class="side-menu" id="sideMenu">
@@ -94,7 +95,7 @@
     <div class="wrapper">
         <main class="main">
             <section class="donazioni-info">
-                <h1 class="title-donazioni">DONAZIONI</h1>
+                <h1 class="title-donazioni margine">DONAZIONI</h1>
                 <h2 class="titoletti margine">AIUTACI CON UNA DONAZIONE</h2>
                 <p class="text">Ogni giorno a Cuccioli Allegri ci prendiamo cura di decine di cani e gatti: li nutriamo, li curiamo, li coccoliamo e facciamo il possibile per trovare loro una famiglia. Ma tutto questo ha un costo.</p>
                 <p class="text">Con la tua donazione, anche piccola, ci aiuterai a garantire cibo, medicine, sterilizzazioni, coperte e cure veterinarie ai nostri amici a quattro zampe.</p>
@@ -103,29 +104,55 @@
 
             <section class="forma-donazione">
                 <h3>Compila il modulo per donare</h3>
-                <form action="grazie.html" method="post">
+                <form action="thanks.html" method="post">
                     <label for="nome">Nome completo:</label>
                     <input type="text" id="nome" name="nome" required>
-
-                    <label for="email">Email (per conferma):</label>
+                  
+                    <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
-
+                  
                     <label for="importo">Importo della donazione (€):</label>
                     <input type="number" name="importo" id="importo" min="1" required>
-
+                  
                     <label for="motivo">Motivo della donazione:</label>
                     <select name="motivo" id="motivo">
-                        <option value="generale">Supporto generale</option>
-                        <option value="cibo">Cibo e alimentazione</option>
-                        <option value="cure">Cure veterinarie</option>
-                        <option value="progetti">Progetti speciali</option>
+                      <option value="generale">Supporto generale</option>
+                      <option value="cibo">Cibo</option>
+                      <option value="cure">Cure veterinarie</option>
+                      <option value="progetti">Progetti speciali</option>
                     </select>
 
-                    <a href="thanks.html">
-                        <button type="submit">Invia e procedi alla donazione
-                        </button>
-                    </a> 
-                </form>
+                    <label for="metodo-pagamento">Metodo di pagamento:</label>
+                    <select id="metodo-pagamento" name="metodo-pagamento" required onchange="mostraCampiPagamento()">
+                    <option value="">Seleziona un metodo di pagamento</option>
+                    <option value="carta">Carta di credito / debito</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="bonifico">Bonifico bancario</option>
+                    </select>
+
+                    <div id="campi-carta" style="display:none; margin-top: 10px;">
+                        <label for="numero-carta">Numero carta:</label>
+                        <input type="text" id="numero-carta" name="numero-carta" pattern="\d{13,19}" placeholder="1234 5678 9012 3456" />
+                    
+                        <label for="scadenza-carta">Data scadenza:</label>
+                        <input type="month" id="scadenza-carta" name="scadenza-carta" />
+                    
+                        <label for="cvv-carta">CVV:</label>
+                        <input type="text" id="cvv-carta" name="cvv-carta" pattern="\d{3,4}" placeholder="123" />
+                      </div>
+                    
+                      <div id="campi-paypal" style="display:none; margin-top: 10px;">
+                        <label for="email-paypal">Email PayPal:</label>
+                        <input type="email" id="email-paypal" name="email-paypal" placeholder="email@paypal.com" />
+                      </div>
+                    
+                      <div id="campi-bonifico" style="display:none; margin-top: 10px;">
+                        <p>Effettua il bonifico al seguente IBAN:</p>
+                        <p><strong>IT00 0000 0000 0000 0000 0000 000</strong></p>
+                      </div>
+                  
+                    <button type="submit">Invia e procedi alla donazione</button>
+                  </form>
             </section>
 
         </main>
@@ -165,6 +192,15 @@
         menu.classList.remove('hidden');
         openArrow.classList.add('hidden');
         main.classList.remove('wide');
+        }
+    </script>
+
+    <script>
+        function mostraCampiPagamento() {
+        const metodo = document.getElementById('metodo-pagamento').value;
+        document.getElementById('campi-carta').style.display = (metodo === 'carta') ? 'block' : 'none';
+        document.getElementById('campi-paypal').style.display = (metodo === 'paypal') ? 'block' : 'none';
+        document.getElementById('campi-bonifico').style.display = (metodo === 'bonifico') ? 'block' : 'none';
         }
     </script>
             

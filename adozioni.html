@@ -33,17 +33,19 @@
             ☰
         </div>
     
-    <div class="menuleft" id="menuleft">
-        <div class="chiudimenu" onclick="toggleMenuleft()">✖</div>
-        <div class="box-menuprincipale">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="volontariato.html">Volontariato</a></li>
-                <li><a href="adozioni.html">Adotta un cucciolo</a></li>
-                <li><a href="donazioni.html">Donazioni</a></li>
-            </ul>
+        <div class="menuleft" id="menuleft">
+            <div class="chiudimenu" onclick="toggleMenuleft()">✖</div>
+            <div class="box-menuprincipale">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="volontariato.html">Volontariato</a></li>
+                    <li><a href="adozioni.html">Adotta un cucciolo</a></li>
+                    <li><a href="donazioni.html">Donazioni</a></li>
+                    <li><a href="dovecitroviamo.html">Vieni a trovarci</a></li>
+                    <li><a href="consigli.html">Consigli</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
     </header>
 
     <div class="side-menu" id="sideMenu">
@@ -106,14 +108,14 @@
 
             <div class="cats" id="cat-container"></div>  
         </div>
-        <!-- Lightbox (modale per ingrandire l'immagine) -->
+        
         <div id="lightbox" class="lightbox">
             <span id="close-lightbox" class="close-lightbox">✖</span>
             <img id="lightbox-img" src="" alt="Immagine Ingrandita">
         </div>
 
         <script>
-                        // Array di esempio di cani e gatti
+                        
             const dogs = [
             { nome: "Fido", foto: "foto-cani/cane1.jpeg", eta: 2, razza: "Labrador" },
             { nome: "Rex", foto: "foto-cani/cane2.jpeg", eta: 3, razza: "German Shepherd" },
@@ -162,7 +164,7 @@
             { nome: "Bambù", foto: "foto-gatti/gatto20.jpeg", eta: 7, razza: "Bengal" },
             ];
 
-            // Funzione per creare il box dell'adozione
+           
             function createAnimalBox(animal, type) {
             return `
                 <div class="${type}">
@@ -176,7 +178,7 @@
             `;
             }
 
-            // Funzione per aggiungere i cani alla pagina
+         
             function addDogsToPage() {
             const container = document.getElementById('dog-container');
             dogs.forEach(dog => {
@@ -184,7 +186,7 @@
             });
             }
 
-            // Funzione per aggiungere i gatti alla pagina
+         
             function addCatsToPage() {
             const container = document.getElementById('cat-container');
             cats.forEach(cat => {
@@ -192,7 +194,7 @@
             });
             }
 
-            // Aggiungi gli animali alla pagina
+          
             addDogsToPage();
             addCatsToPage();
 
@@ -233,38 +235,37 @@
         main.classList.remove('wide');
         }
 
-            // Aggiungi l'evento di click su ogni immagine del cane
     document.querySelectorAll('.dog img').forEach(image => {
         image.addEventListener('click', function() {
-            // Mostra il lightbox
+            
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
 
-            // Imposta l'immagine da mostrare nel lightbox
+           
             lightboxImg.src = this.src;
             lightbox.style.display = 'flex';
         });
     });
 
-    // Aggiungi l'evento di click su ogni immagine del gatto
+    
     document.querySelectorAll('.cat img').forEach(image => {
         image.addEventListener('click', function() {
-            // Mostra il lightbox
+            
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
 
-            // Imposta l'immagine da mostrare nel lightbox
+            
             lightboxImg.src = this.src;
             lightbox.style.display = 'flex';
         });
     });
 
-    // Chiudi il lightbox quando clicchi sulla X
+    
     document.getElementById('close-lightbox').addEventListener('click', function() {
         document.getElementById('lightbox').style.display = 'none';
     });
 
-    // Chiudi il lightbox cliccando fuori dall'immagine
+    
     document.getElementById('lightbox').addEventListener('click', function(e) {
         if (e.target === this) {
             this.style.display = 'none';

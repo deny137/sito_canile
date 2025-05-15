@@ -744,6 +744,19 @@ footer.wide {
     }
   }
 
+
+  @media (max-width: 768px) {
+    .volontariato-immagine img,
+    .volontariato-immagine-destra img,
+    .volontariato-immagine2 img,
+    .volontariato-immagine-1 img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  
+
+
   .distanza-testo li {
     line-height: 1.2;
   }
@@ -758,6 +771,61 @@ footer.wide {
     list-style-position: inside;
     text-align: center;
     padding-left: 0;
+  }
+
+
+
+  .box-consigli1 {
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(49, 14, 42, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .box-consigli1:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 18px rgba(49, 14, 42, 0.1);
+    cursor: pointer;
+  }
+
+
+  .contenitore-box-canegatto {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+
+  .box-cane-gatto {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px 25px;
+    flex: 1 1 45%;
+    box-shadow: 0 2px 10px rgba(49, 14, 42, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 20px;
+    min-width: 280px;
+  }
+
+  .box-cane-gatto:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(49, 14, 42, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .contenitore-blocchi {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .box-animale {
+      flex: 1 1 100%;
+      min-width: auto;
+      margin-bottom: 20px;
+    }
   }
 
   /* DONAZIONI */
@@ -786,7 +854,7 @@ footer.wide {
     color: black;
   }
 
-   .forma-donazione input, .forma-donazione select /* .forma-donazione textarea */ {
+   .forma-donazione input, .forma-donazione select {
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
@@ -885,58 +953,8 @@ footer.wide {
 
 .slider-container {
     position: relative;
-    width: 100%;
-    
-    
+    width: 100%;   
 }
-
-
-/* .slider-nav button {
-  background-color: rgba(255, 255, 255, 0.5);
-  border: none;
-  padding: 15px;
-  cursor: pointer;
-  font-size: 24px;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 10;
-}
-
-.slider-nav .prev {
-  left: 10px;
-}
-
-.slider-nav .next {
-  right: 10px;
-}
-.slider-nav button:hover {
-  background-color: rgb(159, 158, 158);
-}
-
-
-.slider-nav a {
-  width: 14px;
-  height: 14px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  display: inline-block;
-  text-indent: -9999px;
-  overflow: hidden;
-  border: 1px solid #999;
-  transition: background-color 3s;
-}
-
-.slider-nav a:hover,
-.slider-nav a:focus {
-  background-color: #ff88cc;
-}
-
-.slider-e-testo {
-  max-width: 800px; 
-  margin: 0 auto;
-} */
 
 @media (max-width: 768px) {
   .slider{
@@ -950,26 +968,71 @@ footer.wide {
 
 .hero-text {
   position: absolute;
-  top: 50%;  
-  left: 50%; 
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  color: white; 
+  color: white;
   text-align: center;
   z-index: 10;
-  font-size: 30px;  
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+  font-size: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  width: 90%;
+  padding: 20px;
 }
 
+.hero-text h1 {
+  font-size: 40px;
+  margin: 0;
+}
 
 .hero-text p {
-  font-size: 1.2em;
-  margin-top: 10px;
+  font-size: 18px;
+  margin: 10px 0;
 }
 
+.slider-bottone {
+  background-color: #ff6b6b;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
 
-/* .slider-nav button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-} */
+.slider-bottone:hover {
+  background-color: #ff5599;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .hero-text {
+    position: absolute;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    text-align: center;
+    width: 90%;
+    z-index: 10;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .slider-bottone {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}
+
 
 
 .slider-bottone {
@@ -986,9 +1049,6 @@ footer.wide {
 .slider-bottone:hover {
   background-color: #ff5599;
 }
-
-
-/* Font moderno e colori neutri */
 
 
 nav {
@@ -1043,7 +1103,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Animazione */
+
 .fade-in {
   animation: fadeIn 1s ease-in;
 }
@@ -1151,4 +1211,42 @@ a:hover {
     width: 100%;
     order: 0;
   }
+}
+
+.grazie-container {
+  max-width: 700px;
+  margin: 100px auto;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
+  padding: 40px;
+  background-color: #fff0f7;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.grazie-container h1 {
+  font-size: 36px;
+  color: #ff4081;
+}
+
+.grazie-container p {
+  font-size: 18px;
+  color: #444;
+  margin-top: 20px;
+}
+
+.btn-torna-home {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #ff4081;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-torna-home:hover {
+  background-color: #e7356f;
 }
